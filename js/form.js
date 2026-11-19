@@ -201,10 +201,10 @@ const TRANSLATIONS = {
     subtitle: 'Multiply — Réseau Mondial',
     heroTitle: "Formulaire d'Affiliation",
     heroSubtitle: 'Enregistrez votre programme de formation sur la Plateforme Mondiale de Formation de Multiply.',
-    sidebarTitle: 'Pourquoi s'affilier?',
+    sidebarTitle: "Pourquoi s'affilier?",
     sidebarItems: [
       'Visibilité mondiale dans le réseau Multiply',
-      'Connexion avec d'autres programmes et leaders',
+      "Connexion avec d'autres programmes et leaders",
       'Accès au Sceau de Qualité de la Plateforme',
       'Soutien pour la coopération et les échanges',
       'Alignement avec la Carte Stratégique Missionnaire'
@@ -225,7 +225,7 @@ const TRANSLATIONS = {
     durationOpt:  ['Sélectionner...', 'Mobilisation (1–7 jours)', 'Court Terme (8 jours – 1 mois)', 'Moyen Terme (1–6 mois)', 'Long Terme (6+ mois)'],
     yearCreated:  'Année de Création',
     yearPh:       'Ex: 2015',
-    ageRange:     'Tranche d'Âge des Participants',
+    ageRange:     "Tranche d'Âge des Participants",
     agePh:        'Ex: 18–35',
     participants: 'Participants par An (estimé)',
     participantsPh: 'Ex: 120',
@@ -233,8 +233,8 @@ const TRANSLATIONS = {
     costPh:       'Ex: 500',
     objectives:   'Objectifs et Description du Programme',
     objectivesPh: 'Décrivez brièvement les objectifs, la méthodologie et le focus du programme...',
-    strategicMap: 'Alignement avec la Carte Stratégique (sélectionnez tout ce qui s'applique)',
-    platformFocus:'Axes de la Plateforme (sélectionnez tout ce qui s'applique)',
+    strategicMap: "Alignement avec la Carte Stratégique (sélectionnez tout ce qui s'applique)",
+    platformFocus:"Axes de la Plateforme (sélectionnez tout ce qui s'applique)",
     responsible:  'Nom du Responsable',
     responsiblePh:'Nom complet',
     email:        'Email de Contact',
@@ -248,8 +248,8 @@ const TRANSLATIONS = {
     btnBack:     '← Retour',
     btnNext:     'Suivant →',
     successTitle: 'Demande Soumise!',
-    successMsg:   'Merci d'avoir enregistré votre programme. Nous vous contacterons bientôt.',
-    successBtn:   'Retour à l'accueil',
+    successMsg:   "Merci d'avoir enregistré votre programme. Nous vous contacterons bientôt.",
+    successBtn:   "Retour à l'accueil",
     required: 'Les champs avec * sont obligatoires',
     valRequired: 'Ce champ est obligatoire',
     valEmail:    'Email invalide',
@@ -838,7 +838,7 @@ function showSuccess() {
       <h2 style="color:var(--navy)">${t.successTitle}</h2>
       <p style="color:var(--text-mid);text-align:center;max-width:40ch">${t.successMsg}</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px">
-        <a href="dashboard.html" class="btn btn-navy">${t.successBtn}</a>
+        <a href="index.html" class="btn btn-navy">${t.successBtn}</a>
         <button class="btn btn-outline" onclick="resetForm()">+ Novo programa</button>
       </div>
     </div>

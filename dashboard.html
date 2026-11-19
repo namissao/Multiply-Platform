@@ -53,6 +53,13 @@
       <a href="index.html">Formulário / Form</a>
       <a href="dashboard.html" class="active">Dashboard</a>
     </nav>
+    <button onclick="openFormEditor()" style="
+      font-size:.75rem;font-weight:600;color:#C9A84C;
+      background:none;border:1px solid rgba(201,168,76,.4);
+      border-radius:6px;padding:4px 10px;cursor:pointer;font-family:inherit;transition:all .15s"
+      onmouseover="this.style.borderColor='#C9A84C'"
+      onmouseout="this.style.borderColor='rgba(201,168,76,.4)'">✎ Editor de Formulário</button>
+    <span id="admin-email-badge" style="font-size:.72rem;color:rgba(255,255,255,.5);max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></span>
     <button class="btn-logout-sm" id="btn-logout" onclick="logout()">Sair</button>
   </div>
 </header>
@@ -288,6 +295,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <script src="js/data.js"></script>
 <script src="js/export.js"></script>
+<script src="js/form-editor.js"></script>
 <script src="js/dashboard.js"></script>
 
 </body>

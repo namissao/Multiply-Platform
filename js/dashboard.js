@@ -138,6 +138,12 @@ document.addEventListener('DOMContentLoaded', () => {
   allPrograms = getAllPrograms();
   filteredPrograms = [...allPrograms];
 
+  // Show logged-in admin email in header
+  const emailBadge = document.getElementById('admin-email-badge');
+  if (emailBadge && typeof getAuthEmail === 'function') {
+    emailBadge.textContent = getAuthEmail();
+  }
+
   renderLangBar();
   applyTranslations();
   populateFilters();
