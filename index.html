@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiply — Formulário de Afiliação / Affiliation Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Page-specific overrides */
+    .form-page { min-height: calc(100vh - 64px); }
+    .form-sidebar {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--mid) 100%);
+    }
+    .form-main {
+      background: var(--bg);
+    }
+    .form-inner {
+      max-width: 600px;
+    }
+    @media (max-width: 768px) {
+      .form-sidebar { display: none; }
+      .form-page { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ──────────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="site-logo">
+    <div class="site-logo-text">
+      <span class="brand">MULTIPLY</span>
+      <span class="name">Global Training Platform</span>
+    </div>
+  </div>
+  <nav class="site-nav">
+    <a href="index.html" class="active">Formulário / Form</a>
+    <a href="dashboard.html">Dashboard</a>
+  </nav>
+</header>
+
+<!-- ── LANG BAR (mobile) ───────────────────────────────────── -->
+<div style="background:#fff;border-bottom:1px solid var(--border);padding:10px 24px;display:none" id="mobile-lang-bar-wrap">
+  <div class="lang-bar" id="lang-bar-mobile"></div>
+</div>
+
+<!-- ── MAIN LAYOUT ─────────────────────────────────────────── -->
+<div class="form-page">
+
+  <!-- SIDEBAR -->
+  <aside class="form-sidebar" id="sidebar-content">
+    <!-- Rendered by JS -->
+  </aside>
+
+  <!-- FORM AREA -->
+  <main class="form-main">
+    <!-- Lang switcher -->
+    <div class="lang-bar" id="lang-bar" style="margin-bottom:28px"></div>
+
+    <div class="form-inner">
+      <div id="form-main">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<!-- ── SCRIPTS ──────────────────────────────────────────────── -->
+<script src="js/data.js"></script>
+<script src="js/form.js"></script>
+
+</body>
+</html>
