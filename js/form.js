@@ -11,14 +11,15 @@ const TRANSLATIONS = {
     subtitle: 'Multiply — Rede Global',
     heroTitle: 'Formulário de Afiliação',
     heroSubtitle: 'Registre seu programa de treinamento na Plataforma Global de Treinamento da Multiply.',
-    sidebarTitle: 'Por que se afiliar?',
+    sidebarTitle: 'Por que fazer parte?',
     sidebarItems: [
-      'Visibilidade global na rede Multiply',
-      'Conexão com outros programas e líderes',
-      'Acesso ao Selo de Qualidade da Plataforma',
-      'Suporte na cooperação e intercâmbio de estudantes',
-      'Alinhamento com o Mapa Estratégico Missionário'
+      'Catalogue seu programa e conecte-o à rede global da Multiply',
+      'Intercâmbio de estudantes e professores entre programas',
+      'Otimize recursos: envie e receba alunos internacionalmente com menor custo',
+      'Cooperação estratégica com igrejas, conferências e agências missionárias',
+      'Contribua para a formação de discípulos, líderes e missionários em todo o mundo'
     ],
+    countryPh: 'Digite o nome do país...',
     // Steps
     step1: 'Identificação', step1desc: 'Dados básicos do programa',
     step2: 'Detalhes', step2desc: 'Perfil e alcance',
@@ -79,14 +80,15 @@ const TRANSLATIONS = {
     subtitle: 'Multiply — Red Global',
     heroTitle: 'Formulario de Afiliación',
     heroSubtitle: 'Registra tu programa de entrenamiento en la Plataforma Global de Entrenamiento de Multiply.',
-    sidebarTitle: '¿Por qué afiliarse?',
+    sidebarTitle: '¿Por qué sumarte?',
     sidebarItems: [
-      'Visibilidad global en la red Multiply',
-      'Conexión con otros programas y líderes',
-      'Acceso al Sello de Calidad de la Plataforma',
-      'Apoyo en cooperación e intercambio de estudiantes',
-      'Alineación con el Mapa Estratégico Misionero'
+      'Cataloga tu programa y conéctalo a la red global de Multiply',
+      'Intercambio de estudiantes y profesores entre programas',
+      'Optimiza recursos: envía y recibe alumnos internacionalmente con menor costo',
+      'Cooperación estratégica con iglesias, conferencias y agencias misioneras',
+      'Contribuye a la formación de discípulos, líderes y misioneros en todo el mundo'
     ],
+    countryPh: 'Escribe el nombre del país...',
     step1: 'Identificación', step1desc: 'Datos básicos del programa',
     step2: 'Detalles', step2desc: 'Perfil y alcance',
     step3: 'Alineamiento', step3desc: 'Conexión estratégica',
@@ -140,14 +142,15 @@ const TRANSLATIONS = {
     subtitle: 'Multiply — Global Network',
     heroTitle: 'Affiliation Form',
     heroSubtitle: 'Register your training program in the Multiply Global Training Platform.',
-    sidebarTitle: 'Why affiliate?',
+    sidebarTitle: 'Why join?',
     sidebarItems: [
-      'Global visibility within the Multiply network',
-      'Connection with other programs and leaders',
-      'Access to the Platform Quality Seal',
-      'Support for student cooperation and exchange',
-      'Alignment with the Mission Strategic Map'
+      'Catalog your program and connect it to the global Multiply network',
+      'Exchange students and instructors between programs across countries',
+      'Optimize resources: send and receive students internationally at lower cost',
+      'Strategic cooperation with churches, conferences and missionary agencies',
+      'Contribute to forming disciples, leaders and missionaries around the world'
     ],
+    countryPh: 'Type the country name...',
     step1: 'Identification', step1desc: 'Basic program data',
     step2: 'Details', step2desc: 'Profile and reach',
     step3: 'Alignment', step3desc: 'Strategic connection',
@@ -201,14 +204,15 @@ const TRANSLATIONS = {
     subtitle: 'Multiply — Réseau Mondial',
     heroTitle: "Formulaire d'Affiliation",
     heroSubtitle: 'Enregistrez votre programme de formation sur la Plateforme Mondiale de Formation de Multiply.',
-    sidebarTitle: "Pourquoi s'affilier?",
+    sidebarTitle: 'Pourquoi rejoindre?',
     sidebarItems: [
-      'Visibilité mondiale dans le réseau Multiply',
-      "Connexion avec d'autres programmes et leaders",
-      'Accès au Sceau de Qualité de la Plateforme',
-      'Soutien pour la coopération et les échanges',
-      'Alignement avec la Carte Stratégique Missionnaire'
+      'Cataloguez votre programme et connectez-le au réseau mondial de Multiply',
+      "Échanges d'étudiants et d'instructeurs entre programmes de différents pays",
+      "Optimisez les ressources : envoyez et recevez des étudiants à l'international",
+      'Coopération stratégique avec des églises, conférences et agences missionnaires',
+      'Contribuez à la formation de disciples, leaders et missionnaires dans le monde'
     ],
+    countryPh: 'Saisissez le nom du pays...',
     step1: 'Identification', step1desc: 'Données de base',
     step2: 'Détails', step2desc: 'Profil et portée',
     step3: 'Alignement', step3desc: 'Connexion stratégique',
@@ -262,14 +266,15 @@ const TRANSLATIONS = {
     subtitle: 'Multiply — Globales Netzwerk',
     heroTitle: 'Antragsformular',
     heroSubtitle: 'Registrieren Sie Ihr Trainingsprogramm auf der Globalen Trainingsplattform von Multiply.',
-    sidebarTitle: 'Warum affiliieren?',
+    sidebarTitle: 'Warum beitreten?',
     sidebarItems: [
-      'Weltweite Sichtbarkeit im Multiply-Netzwerk',
-      'Verbindung mit anderen Programmen und Leitern',
-      'Zugang zum Qualitätssiegel der Plattform',
-      'Unterstützung bei Kooperation und Studentenaustausch',
-      'Ausrichtung an der Missionarischen Strategiekarte'
+      'Katalogisieren Sie Ihr Programm und verbinden Sie es mit dem globalen Multiply-Netzwerk',
+      'Studenten- und Lehrertausch zwischen Programmen verschiedener Länder',
+      'Ressourcen optimieren: Studierende international senden und empfangen',
+      'Strategische Zusammenarbeit mit Kirchen, Konferenzen und Missionsagenturen',
+      'Zur Ausbildung von Jüngern, Führern und Missionaren weltweit beitragen'
     ],
+    countryPh: 'Ländernamen eingeben...',
     step1: 'Identifikation', step1desc: 'Grunddaten des Programms',
     step2: 'Details', step2desc: 'Profil und Reichweite',
     step3: 'Ausrichtung', step3desc: 'Strategische Verbindung',
@@ -325,12 +330,13 @@ const TRANSLATIONS = {
     heroSubtitle: 'ลงทะเบียนโปรแกรมการฝึกอบรมของคุณในแพลตฟอร์มการฝึกอบรมระดับโลกของ Multiply',
     sidebarTitle: 'ทำไมต้องสมัครสมาชิก?',
     sidebarItems: [
-      'การมองเห็นระดับโลกในเครือข่าย Multiply',
-      'การเชื่อมต่อกับโปรแกรมและผู้นำอื่นๆ',
-      'การเข้าถึงตราประทับคุณภาพของแพลตฟอร์ม',
-      'การสนับสนุนความร่วมมือและการแลกเปลี่ยนนักศึกษา',
-      'การจัดแนวกับแผนที่ยุทธศาสตร์มิชชันนารี'
+      'จัดทำแค็ตตาล็อกโปรแกรมและเชื่อมต่อกับเครือข่ายระดับโลกของ Multiply',
+      'แลกเปลี่ยนนักศึกษาและอาจารย์ระหว่างโปรแกรมในประเทศต่างๆ',
+      'เพิ่มประสิทธิภาพทรัพยากร: ส่งและรับนักศึกษาในระดับนานาชาติ',
+      'ความร่วมมือเชิงกลยุทธ์กับคริสตจักร การประชุม และหน่วยงานมิชชันนารี',
+      'มีส่วนร่วมในการฝึกอบรมสาวก ผู้นำ และมิชชันนารีทั่วโลก'
     ],
+    countryPh: 'พิมพ์ชื่อประเทศ...',
     step1: 'การระบุตัวตน', step1desc: 'ข้อมูลพื้นฐานของโปรแกรม',
     step2: 'รายละเอียด', step2desc: 'โปรไฟล์และการเข้าถึง',
     step3: 'การจัดแนว', step3desc: 'การเชื่อมต่อเชิงกลยุทธ์',
@@ -386,12 +392,13 @@ const TRANSLATIONS = {
     heroSubtitle: 'MultiplyのグローバルトレーニングプラットフォームにトレーニングプログラムをE登録してください。',
     sidebarTitle: 'なぜ加盟するのか？',
     sidebarItems: [
-      'Multiplyネットワークでの世界的な認知度',
-      '他のプログラムやリーダーとのつながり',
-      'プラットフォーム品質シールへのアクセス',
-      '学生の協力と交流へのサポート',
-      'ミッション戦略マップとの整合性'
+      'プログラムを登録してMultiplyのグローバルネットワークに接続する',
+      '異なる国のプログラム間での学生・教師の交流',
+      'リソースの最適化：国際的に学生を送受することができる',
+      '教会、会議、宣教機関との戦略的協力',
+      '世界中で弟子、リーダー、宣教師の育成に貢献する'
     ],
+    countryPh: '国名を入力...',
     step1: '識別', step1desc: 'プログラムの基本データ',
     step2: '詳細', step2desc: 'プロフィールとリーチ',
     step3: '整合性', step3desc: '戦略的つながり',
@@ -439,14 +446,47 @@ const TRANSLATIONS = {
   }
 };
 
-// ── COUNTRIES LIST (Spanish LATAM names + English) ────────────
+// ── COUNTRIES LIST — suggestions for autocomplete datalist ────
+// User can type any country, including ones not on this list.
 const COUNTRIES_LIST = [
-  'Bolivia', 'Brasil / Brazil', 'Canada', 'Chile', 'Colombia',
-  'Costa Rica', 'El Salvador', 'Estados Unidos / USA',
-  'Filipinas / Philippines', 'Guatemala', 'Honduras',
-  'Japón / Japan', 'Jordania / Jordan', 'México / Mexico',
-  'Nicaragua', 'Panamá / Panama', 'Paraguay', 'Tailandia / Thailand',
-  'Other / Otro'
+  'Afghanistan','Albania','Algeria','Angola','Argentina','Armenia',
+  'Australia','Austria','Azerbaijan','Bangladesh','Belarus','Belgium',
+  'Belize','Benin','Bolivia','Bosnia','Botswana','Brazil','Bulgaria',
+  'Burkina Faso','Burundi','Cambodia','Cameroon','Canada','Chad',
+  'Chile','China','Colombia','Congo','Costa Rica','Croatia','Cuba',
+  'Czech Republic','DR Congo','Denmark','Dominican Republic',
+  'Ecuador','Egypt','El Salvador','Ethiopia','Finland','France',
+  'Germany','Ghana','Greece','Guatemala','Guinea','Haiti','Honduras',
+  'Hungary','India','Indonesia','Iran','Iraq','Ireland','Israel',
+  'Italy','Ivory Coast','Jamaica','Japan','Jordan','Kazakhstan',
+  'Kenya','Laos','Lebanon','Liberia','Libya','Madagascar','Malawi',
+  'Malaysia','Mali','Mexico','Mongolia','Morocco','Mozambique',
+  'Myanmar','Nepal','Netherlands','New Zealand','Nicaragua','Nigeria',
+  'North Korea','Norway','Pakistan','Panama','Papua New Guinea',
+  'Paraguay','Peru','Philippines','Poland','Portugal','Romania',
+  'Russia','Rwanda','Saudi Arabia','Senegal','Serbia','Sierra Leone',
+  'Somalia','South Africa','South Korea','Spain','Sri Lanka','Sudan',
+  'Sweden','Switzerland','Syria','Taiwan','Tanzania','Thailand',
+  'Togo','Trinidad and Tobago','Tunisia','Turkey','Uganda','Ukraine',
+  'United Kingdom','Uruguay','USA','Uzbekistan','Venezuela','Vietnam',
+  'Yemen','Zambia','Zimbabwe',
+  // Spanish/Portuguese common spellings (aliases for autocomplete)
+  'Brasil','Canadá','Japón','México','Panamá','Tailandia','Filipinas',
+  'Alemania','España','Francia','Italia','Reino Unido','Países Bajos',
+  'Suiza','Suécia','Noruega','Dinamarca','Austrália','Nova Zelândia',
+  'Rússia','Ucrânia','Polônia','República Checa','Romênia','Hungria',
+  'Coreia do Sul','Índia','Paquistão','Indonésia','Malásia','Vietnã',
+  'Camboja','Tailândia','Japão','Mongólia','Nepal','Bangladesh',
+  'Colômbia','Venezuela','Peru','Chile','Argentina','Uruguai',
+  'Paraguai','Bolívia','Equador','Cuba','Jamaica','Haiti',
+  'República Dominicana','Trinidad e Tobago','Nicarágua',
+  'Honduras','Guatemala','El Salvador','Belize','Panamá',
+  'África do Sul','Nigéria','Quênia','Etiópia','Tanzânia','Uganda',
+  'Ruanda','Angola','Moçambique','Zâmbia','Zimbábue','Botsuana',
+  'Marrocos','Argélia','Egito','Sudão','Senegal','Gana','Camarões',
+  'Burkina Faso','Mali','Togo','Benim','Libéria','Serra Leoa','Guiné',
+  'Jordânia','Líbano','Síria','Iraque','Irã','Turquia','Israel',
+  'Arábia Saudita','Iêmen','Tunísia','Líbia','Somália',
 ];
 
 const REGIONS_LIST = [
@@ -579,10 +619,13 @@ function renderStep1(t) {
     <div class="form-grid-2">
       <div class="form-group">
         <label class="form-label">${t.country} <span class="required">*</span></label>
-        <select id="f-country" class="form-input form-select" data-key="country">
-          <option value="">—</option>
-          ${COUNTRIES_LIST.map(c => `<option value="${c}">${c}</option>`).join('')}
-        </select>
+        <input type="text" id="f-country" class="form-input" data-key="country"
+          placeholder="${t.countryPh || 'Digite o nome do país...'}"
+          list="country-datalist" autocomplete="off">
+        <datalist id="country-datalist">
+          ${COUNTRIES_LIST.map(c => `<option value="${c}">`).join('')}
+        </datalist>
+        <span class="form-error" id="err-country" style="color:#e53e3e;font-size:.775rem;display:none"></span>
       </div>
       <div class="form-group">
         <label class="form-label">${t.region} <span class="required">*</span></label>

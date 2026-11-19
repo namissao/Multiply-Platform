@@ -589,9 +589,18 @@ function renderMap() {
 
   const byCoords = {};
   filteredPrograms.forEach(p => {
-    const key = `${p.lat},${p.lng}`;
-    if (p.lat && p.lng) {
-      if (!byCoords[key]) byCoords[key] = { lat: p.lat, lng: p.lng, programs: [] };
+    let lat = p.lat, lng = p.lng;
+    // If no coords stored, resolve from country name via normalizeCountry()
+    if ((!lat || !lng) && p.country && typeof normalizeCountry === 'function') {
+      const canonical = normalizeCountry(p.country);
+      if (canonical && COUNTRY_COORDS[canonical]) {
+        lat = COUNTRY_COORDS[canonical].lat;
+        lng = COUNTRY_COORDS[canonical].lng;
+      }
+    }
+    const key = `${lat},${lng}`;
+    if (lat && lng) {
+      if (!byCoords[key]) byCoords[key] = { lat, lng, programs: [] };
       byCoords[key].programs.push(p);
     }
   });
