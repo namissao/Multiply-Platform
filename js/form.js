@@ -48,7 +48,9 @@ const TRANSLATIONS = {
     objectives:   'Objetivos e Descrição do Programa',
     objectivesPh: 'Descreva brevemente os objetivos, metodologia e foco do programa...',
     strategicMap: 'Alinhamento com o Mapa Estratégico (selecione todos que se aplicam)',
-    platformFocus:'Focos da Plataforma (selecione todos que se aplicam)',
+    platformFocus:'Focos do Programa (selecione todos que se aplicam)',
+    otherLabel: 'Outro',
+    otherPh: 'Especifique...',
     responsible:  'Nome do Responsável',
     responsiblePh:'Nome completo',
     email:        'E-mail de Contato',
@@ -114,7 +116,9 @@ const TRANSLATIONS = {
     objectives:   'Objetivos y Descripción del Programa',
     objectivesPh: 'Describe brevemente los objetivos, metodología y enfoque del programa...',
     strategicMap: 'Alineación con el Mapa Estratégico (selecciona todos los que apliquen)',
-    platformFocus:'Enfoques de la Plataforma (selecciona todos los que apliquen)',
+    platformFocus:'Enfoques del Programa (selecciona todos los que apliquen)',
+    otherLabel: 'Otro',
+    otherPh: 'Especifica...',
     responsible:  'Nombre del Responsable',
     responsiblePh:'Nombre completo',
     email:        'Correo de Contacto',
@@ -176,7 +180,9 @@ const TRANSLATIONS = {
     objectives:   'Program Objectives and Description',
     objectivesPh: 'Briefly describe the objectives, methodology and focus of the program...',
     strategicMap: 'Alignment with Strategic Map (select all that apply)',
-    platformFocus:'Platform Focuses (select all that apply)',
+    platformFocus:'Program Focuses (select all that apply)',
+    otherLabel: 'Other',
+    otherPh: 'Specify...',
     responsible:  'Program Leader Name',
     responsiblePh:'Full name',
     email:        'Contact Email',
@@ -238,7 +244,9 @@ const TRANSLATIONS = {
     objectives:   'Objectifs et Description du Programme',
     objectivesPh: 'Décrivez brièvement les objectifs, la méthodologie et le focus du programme...',
     strategicMap: "Alignement avec la Carte Stratégique (sélectionnez tout ce qui s'applique)",
-    platformFocus:"Axes de la Plateforme (sélectionnez tout ce qui s'applique)",
+    platformFocus:"Axes du Programme (sélectionnez tout ce qui s'applique)",
+    otherLabel: 'Autre',
+    otherPh: 'Précisez...',
     responsible:  'Nom du Responsable',
     responsiblePh:'Nom complet',
     email:        'Email de Contact',
@@ -300,7 +308,9 @@ const TRANSLATIONS = {
     objectives:   'Programmziele und Beschreibung',
     objectivesPh: 'Beschreiben Sie kurz die Ziele, Methodik und Schwerpunkt des Programms...',
     strategicMap: 'Ausrichtung an der Strategiekarte (alle zutreffenden auswählen)',
-    platformFocus:'Plattformschwerpunkte (alle zutreffenden auswählen)',
+    platformFocus:'Programmschwerpunkte (alle zutreffenden auswählen)',
+    otherLabel: 'Sonstiges',
+    otherPh: 'Angeben...',
     responsible:  'Name des Verantwortlichen',
     responsiblePh:'Vollständiger Name',
     email:        'Kontakt-E-Mail',
@@ -362,7 +372,9 @@ const TRANSLATIONS = {
     objectives:   'วัตถุประสงค์และคำอธิบายโปรแกรม',
     objectivesPh: 'อธิบายวัตถุประสงค์ วิธีการ และจุดเน้นของโปรแกรมโดยย่อ...',
     strategicMap: 'การจัดแนวกับแผนที่เชิงกลยุทธ์ (เลือกทั้งหมดที่ใช้งาน)',
-    platformFocus:'จุดเน้นของแพลตฟอร์ม (เลือกทั้งหมดที่ใช้งาน)',
+    platformFocus:'จุดเน้นของโปรแกรม (เลือกทั้งหมดที่ใช้งาน)',
+    otherLabel: 'อื่นๆ',
+    otherPh: 'ระบุ...',
     responsible:  'ชื่อผู้รับผิดชอบ',
     responsiblePh:'ชื่อเต็ม',
     email:        'อีเมลติดต่อ',
@@ -424,7 +436,9 @@ const TRANSLATIONS = {
     objectives:   'プログラムの目標と説明',
     objectivesPh: 'プログラムの目標、方法論、焦点を簡単に説明してください...',
     strategicMap: '戦略マップとの整合性（該当するものをすべて選択）',
-    platformFocus:'プラットフォームの焦点（該当するものをすべて選択）',
+    platformFocus:'プログラムの焦点（該当するものをすべて選択）',
+    otherLabel: 'その他',
+    otherPh: '記入してください...',
     responsible:  '担当者名',
     responsiblePh:'フルネーム',
     email:        '連絡先メール',
@@ -684,6 +698,8 @@ function renderStep2(t) {
 function renderStep3(t) {
   const strategic = ['Mobilizing','Connecting','Witnessing','Gathering','Equipping','Growing','Multiplying','Partnering','Extending'];
   const platform  = ['Discipleship','Missionary Training','Church Planting','Cross-cultural','Leadership Development','Mobilization','Sustainability','Networking'];
+  const otherLabel = t.otherLabel || 'Other';
+  const otherPh    = t.otherPh    || 'Specify...';
   return `
     <div class="form-section-title">${t.sec3}</div>
     <div class="form-group">
@@ -693,7 +709,14 @@ function renderStep3(t) {
           <label class="checkbox-item" id="sm-${i}">
             <input type="checkbox" value="${s}" class="strategic-check"> ${i+1}. ${s}
           </label>`).join('')}
+        <label class="checkbox-item" id="sm-other">
+          <input type="checkbox" value="__other__" class="strategic-check" id="sm-other-chk"
+            onchange="document.getElementById('sm-other-text').style.display=this.checked?'block':'none'">
+          ${otherLabel}
+        </label>
       </div>
+      <input type="text" id="sm-other-text" class="form-input" placeholder="${otherPh}"
+        style="display:none;margin-top:8px" data-key="strategicOther">
     </div>
     <div class="form-group" style="margin-top:20px">
       <label class="form-label">${t.platformFocus}</label>
@@ -702,7 +725,14 @@ function renderStep3(t) {
           <label class="checkbox-item" id="pf-${i}">
             <input type="checkbox" value="${p}" class="platform-check"> ${p}
           </label>`).join('')}
+        <label class="checkbox-item" id="pf-other">
+          <input type="checkbox" value="__other__" class="platform-check" id="pf-other-chk"
+            onchange="document.getElementById('pf-other-text').style.display=this.checked?'block':'none'">
+          ${otherLabel}
+        </label>
       </div>
+      <input type="text" id="pf-other-text" class="form-input" placeholder="${otherPh}"
+        style="display:none;margin-top:8px" data-key="platformOther">
     </div>
     <div style="display:flex;gap:16px;justify-content:space-between;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)">
       <button class="btn btn-outline" onclick="goStep(2)">${t.btnBack}</button>
@@ -752,9 +782,15 @@ function saveFormValues() {
   document.querySelectorAll('[data-key]').forEach(el => {
     formData[el.dataset.key] = el.value;
   });
-  // Save checkboxes
-  const strategic = [...document.querySelectorAll('.strategic-check:checked')].map(c => c.value);
-  const platform  = [...document.querySelectorAll('.platform-check:checked')].map(c => c.value);
+  // Save checkboxes — replace __other__ with the typed text
+  const smOtherText = (document.getElementById('sm-other-text') || {}).value || '';
+  const pfOtherText = (document.getElementById('pf-other-text') || {}).value || '';
+  const strategic = [...document.querySelectorAll('.strategic-check:checked')]
+    .map(c => c.value === '__other__' ? (smOtherText.trim() || 'Outro') : c.value)
+    .filter(Boolean);
+  const platform  = [...document.querySelectorAll('.platform-check:checked')]
+    .map(c => c.value === '__other__' ? (pfOtherText.trim() || 'Outro') : c.value)
+    .filter(Boolean);
   if (strategic.length) formData.strategicFocuses = strategic;
   if (platform.length)  formData.platformFocuses  = platform;
 }
@@ -766,15 +802,35 @@ function restoreFormValues() {
     }
   });
   // Restore checkboxes
+  const knownStrategic = ['Mobilizing','Connecting','Witnessing','Gathering','Equipping','Growing','Multiplying','Partnering','Extending'];
+  const knownPlatform  = ['Discipleship','Missionary Training','Church Planting','Cross-cultural','Leadership Development','Mobilization','Sustainability','Networking'];
   if (formData.strategicFocuses) {
     document.querySelectorAll('.strategic-check').forEach(c => {
-      c.checked = formData.strategicFocuses.includes(c.value);
+      if (c.value === '__other__') {
+        const custom = formData.strategicFocuses.find(v => !knownStrategic.includes(v));
+        c.checked = !!custom;
+        if (custom) {
+          const txt = document.getElementById('sm-other-text');
+          if (txt) { txt.value = custom; txt.style.display = 'block'; }
+        }
+      } else {
+        c.checked = formData.strategicFocuses.includes(c.value);
+      }
       c.closest('.checkbox-item').classList.toggle('checked', c.checked);
     });
   }
   if (formData.platformFocuses) {
     document.querySelectorAll('.platform-check').forEach(c => {
-      c.checked = formData.platformFocuses.includes(c.value);
+      if (c.value === '__other__') {
+        const custom = formData.platformFocuses.find(v => !knownPlatform.includes(v));
+        c.checked = !!custom;
+        if (custom) {
+          const txt = document.getElementById('pf-other-text');
+          if (txt) { txt.value = custom; txt.style.display = 'block'; }
+        }
+      } else {
+        c.checked = formData.platformFocuses.includes(c.value);
+      }
       c.closest('.checkbox-item').classList.toggle('checked', c.checked);
     });
   }
@@ -854,17 +910,103 @@ function submitForm() {
     platformFocuses:  formData.platformFocuses  || [],
   };
 
-  // Save to localStorage
-  if (typeof addProgram === 'function') {
-    addProgram(program);
-  } else {
-    const existing = JSON.parse(localStorage.getItem('multiply_programs') || 'null') || [];
-    program.id = Date.now();
-    existing.push(program);
-    localStorage.setItem('multiply_programs', JSON.stringify(existing));
-  }
+  // Save to localStorage immediately
+  const existing = JSON.parse(localStorage.getItem('multiply_programs') || 'null') || [];
+  program.id = Date.now();
+  program.submittedAt = new Date().toISOString();
+  program.aiStatus = 'pending'; // will be set to 'done' after AI runs
+  existing.push(program);
+  localStorage.setItem('multiply_programs', JSON.stringify(existing));
+
+  // Trigger AI auto-categorization in background (non-blocking)
+  runAiCategorization(program);
 
   showSuccess();
+}
+
+// ── AI AUTO-CATEGORIZATION ──────────────────────────────────────
+// Runs after form submission. Calls Anthropic API (key set by admin in dashboard).
+// Updates the saved program with AI-generated analysis.
+async function runAiCategorization(program) {
+  const apiKey = localStorage.getItem('multiply_anthropic_key');
+  if (!apiKey) return; // admin hasn't configured the key yet
+
+  const STRATEGIC = ['Mobilizing','Connecting','Witnessing','Gathering','Equipping','Growing','Multiplying','Partnering','Extending'];
+  const PLATFORM  = ['Discipleship','Missionary Training','Church Planting','Cross-cultural','Leadership Development','Mobilization','Sustainability','Networking'];
+
+  const prompt = `You are an assistant for the Multiply Global Training Platform, a network connecting missionary training programs worldwide.
+
+A new program has registered. Based on the information below, provide:
+1. **Strategic Map alignment**: which of these 9 points best describe this program (choose 1-3): ${STRATEGIC.join(', ')}
+2. **Program focuses**: which of these best describe the program's focus (choose 1-4): ${PLATFORM.join(', ')}
+3. **Duration category**: one of: mobilizacao (1-7 days), curto (up to 1 month), medio (1-6 months), longo (6+ months)
+4. **Brief analysis** (2-3 sentences in Portuguese): what this program does, who it serves, and its strategic value to the network.
+
+Program data:
+- Name: ${program.name}
+- Country: ${program.country || 'not specified'}
+- Region: ${program.region || 'not specified'}
+- Duration: ${program.duration}
+- Age range: ${program.ageRange || 'not specified'}
+- Annual participants: ${program.annualParticipants || 'not specified'}
+- Objectives: ${program.objectives || 'not specified'}
+- Existing strategic focuses: ${(program.strategicFocuses || []).join(', ') || 'none selected'}
+- Existing platform focuses: ${(program.platformFocuses || []).join(', ') || 'none selected'}
+
+Respond ONLY with valid JSON in this exact format:
+{
+  "strategicFocuses": ["...", "..."],
+  "platformFocuses": ["...", "..."],
+  "duration": "...",
+  "analysis": "..."
+}`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5',
+        max_tokens: 512,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    if (!res.ok) return;
+    const data = await res.json();
+    const text = data.content?.[0]?.text || '';
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) return;
+
+    const ai = JSON.parse(jsonMatch[0]);
+
+    // Update the saved program
+    const programs = JSON.parse(localStorage.getItem('multiply_programs') || '[]');
+    const idx = programs.findIndex(x => x.id === program.id);
+    if (idx === -1) return;
+
+    // Only override empty fields — don't overwrite what user manually filled
+    if (ai.strategicFocuses?.length && !(programs[idx].strategicFocuses || []).length) {
+      programs[idx].strategicFocuses = ai.strategicFocuses.filter(v => STRATEGIC.includes(v));
+    }
+    if (ai.platformFocuses?.length && !(programs[idx].platformFocuses || []).length) {
+      programs[idx].platformFocuses = ai.platformFocuses.filter(v => PLATFORM.includes(v));
+    }
+    if (ai.duration && !programs[idx].duration) {
+      programs[idx].duration = ai.duration;
+    }
+    programs[idx].aiAnalysis = ai.analysis || '';
+    programs[idx].aiStatus   = 'done';
+
+    localStorage.setItem('multiply_programs', JSON.stringify(programs));
+  } catch (e) {
+    // AI failed silently — program is still saved, admin can categorize manually
+  }
 }
 
 function showSuccess() {
