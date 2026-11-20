@@ -59,12 +59,6 @@
       border-radius:6px;padding:4px 10px;cursor:pointer;font-family:inherit;transition:all .15s"
       onmouseover="this.style.borderColor='#C9A84C'"
       onmouseout="this.style.borderColor='rgba(201,168,76,.4)'">✎ Editor de Formulário</button>
-    <button onclick="openAiSettings()" title="Configurar IA" style="
-      font-size:.75rem;font-weight:600;color:rgba(255,255,255,.55);
-      background:none;border:1px solid rgba(255,255,255,.18);
-      border-radius:6px;padding:4px 10px;cursor:pointer;font-family:inherit;transition:all .15s"
-      onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,.5)'"
-      onmouseout="this.style.color='rgba(255,255,255,.55)';this.style.borderColor='rgba(255,255,255,.18)'">🤖 IA</button>
     <span id="admin-email-badge" style="font-size:.72rem;color:rgba(255,255,255,.5);max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></span>
     <button class="btn-logout-sm" id="btn-logout" onclick="logout()">Sair</button>
   </div>
@@ -250,67 +244,6 @@
 </main>
 
 <!-- ── PROGRAM DETAIL MODAL ──────────────────────────────── -->
-<!-- ── EDIT PROGRAM MODAL ──────────────────────────────────── -->
-<div class="modal-backdrop" id="edit-modal-backdrop">
-  <div class="modal" style="max-width:680px;max-height:90vh;overflow-y:auto">
-    <div class="modal-header">
-      <h3 style="margin-bottom:0">✎ Editar Programa</h3>
-      <button class="btn-icon" onclick="closeEditModal()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <div class="modal-body" id="edit-modal-body">
-      <!-- Filled by JS -->
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-outline btn-sm" style="color:#e53e3e;border-color:#e53e3e" id="edit-delete-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
-        Excluir Programa
-      </button>
-      <div style="display:flex;gap:8px">
-        <button class="btn btn-outline btn-sm" onclick="closeEditModal()">Cancelar</button>
-        <button class="btn btn-primary btn-sm" id="edit-save-btn">Salvar Alterações</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── AI SETTINGS MODAL ───────────────────────────────────── -->
-<div class="modal-backdrop" id="ai-settings-backdrop">
-  <div class="modal" style="max-width:480px">
-    <div class="modal-header">
-      <h3 style="margin-bottom:0">🤖 Configuração da IA</h3>
-      <button class="btn-icon" onclick="document.getElementById('ai-settings-backdrop').classList.remove('open')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <div class="modal-body">
-      <p style="font-size:.85rem;color:var(--text-mid);margin-bottom:16px;line-height:1.6">
-        Configure sua chave da API Anthropic para habilitar a categorização automática de programas por IA.
-        A chave é salva localmente no seu navegador e nunca enviada a terceiros.
-      </p>
-      <div style="margin-bottom:12px">
-        <label class="filter-label" style="margin-bottom:4px">Chave da API Anthropic (sk-ant-...)</label>
-        <input id="ai-key-input" type="password" class="form-input" placeholder="sk-ant-api03-..." style="width:100%;font-family:monospace;font-size:.8rem">
-      </div>
-      <div id="ai-key-status" style="font-size:.8rem;margin-bottom:12px"></div>
-      <div style="background:#f0f4ff;border:1px solid #c5d3f5;border-radius:6px;padding:12px;font-size:.8rem;color:#3a4a6b;line-height:1.6">
-        <strong>O que a IA faz automaticamente ao receber um novo programa:</strong><br>
-        • Detecta país e região com base no texto livre<br>
-        • Categoriza a duração (mobilização / curto / médio / longo)<br>
-        • Sugere alinhamentos no Mapa Estratégico<br>
-        • Gera uma análise resumida em português<br><br>
-        Você pode editar qualquer campo gerado pela IA no painel de edição do programa.
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-outline btn-sm" onclick="document.getElementById('ai-settings-backdrop').classList.remove('open')">Cancelar</button>
-      <button class="btn btn-primary btn-sm" onclick="saveAiKey()">Salvar Chave</button>
-    </div>
-  </div>
-</div>
-
-<!-- ── VIEW PROGRAM MODAL ──────────────────────────────────── -->
 <div class="modal-backdrop" id="modal-backdrop">
   <div class="modal">
     <div class="modal-header">
@@ -360,10 +293,10 @@
 <!-- ── SCRIPTS ────────────────────────────────────────────── -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-<script src="js/data.js?v=4"></script>
-<script src="js/export.js?v=4"></script>
-<script src="js/form-editor.js?v=4"></script>
-<script src="js/dashboard.js?v=4"></script>
+<script src="js/data.js"></script>
+<script src="js/export.js"></script>
+<script src="js/form-editor.js"></script>
+<script src="js/dashboard.js"></script>
 
 </body>
 </html>

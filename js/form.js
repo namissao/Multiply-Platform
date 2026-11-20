@@ -11,15 +11,14 @@ const TRANSLATIONS = {
     subtitle: 'Multiply — Rede Global',
     heroTitle: 'Formulário de Afiliação',
     heroSubtitle: 'Registre seu programa de treinamento na Plataforma Global de Treinamento da Multiply.',
-    sidebarTitle: 'Por que fazer parte?',
+    sidebarTitle: 'Por que se afiliar?',
     sidebarItems: [
-      'Catalogue seu programa e conecte-o à rede global da Multiply',
-      'Intercâmbio de estudantes e professores entre programas',
-      'Otimize recursos: envie e receba alunos internacionalmente com menor custo',
-      'Cooperação estratégica com igrejas, conferências e agências missionárias',
-      'Contribua para a formação de discípulos, líderes e missionários em todo o mundo'
+      'Visibilidade global na rede Multiply',
+      'Conexão com outros programas e líderes',
+      'Acesso ao Selo de Qualidade da Plataforma',
+      'Suporte na cooperação e intercâmbio de estudantes',
+      'Alinhamento com o Mapa Estratégico Missionário'
     ],
-    countryPh: 'Digite o nome do país...',
     // Steps
     step1: 'Identificação', step1desc: 'Dados básicos do programa',
     step2: 'Detalhes', step2desc: 'Perfil e alcance',
@@ -48,9 +47,7 @@ const TRANSLATIONS = {
     objectives:   'Objetivos e Descrição do Programa',
     objectivesPh: 'Descreva brevemente os objetivos, metodologia e foco do programa...',
     strategicMap: 'Alinhamento com o Mapa Estratégico (selecione todos que se aplicam)',
-    platformFocus:'Focos do Programa (selecione todos que se aplicam)',
-    otherLabel: 'Outro',
-    otherPh: 'Especifique...',
+    platformFocus:'Focos da Plataforma (selecione todos que se aplicam)',
     responsible:  'Nome do Responsável',
     responsiblePh:'Nome completo',
     email:        'E-mail de Contato',
@@ -82,15 +79,14 @@ const TRANSLATIONS = {
     subtitle: 'Multiply — Red Global',
     heroTitle: 'Formulario de Afiliación',
     heroSubtitle: 'Registra tu programa de entrenamiento en la Plataforma Global de Entrenamiento de Multiply.',
-    sidebarTitle: '¿Por qué sumarte?',
+    sidebarTitle: '¿Por qué afiliarse?',
     sidebarItems: [
-      'Cataloga tu programa y conéctalo a la red global de Multiply',
-      'Intercambio de estudiantes y profesores entre programas',
-      'Optimiza recursos: envía y recibe alumnos internacionalmente con menor costo',
-      'Cooperación estratégica con iglesias, conferencias y agencias misioneras',
-      'Contribuye a la formación de discípulos, líderes y misioneros en todo el mundo'
+      'Visibilidad global en la red Multiply',
+      'Conexión con otros programas y líderes',
+      'Acceso al Sello de Calidad de la Plataforma',
+      'Apoyo en cooperación e intercambio de estudiantes',
+      'Alineación con el Mapa Estratégico Misionero'
     ],
-    countryPh: 'Escribe el nombre del país...',
     step1: 'Identificación', step1desc: 'Datos básicos del programa',
     step2: 'Detalles', step2desc: 'Perfil y alcance',
     step3: 'Alineamiento', step3desc: 'Conexión estratégica',
@@ -116,9 +112,7 @@ const TRANSLATIONS = {
     objectives:   'Objetivos y Descripción del Programa',
     objectivesPh: 'Describe brevemente los objetivos, metodología y enfoque del programa...',
     strategicMap: 'Alineación con el Mapa Estratégico (selecciona todos los que apliquen)',
-    platformFocus:'Enfoques del Programa (selecciona todos los que apliquen)',
-    otherLabel: 'Otro',
-    otherPh: 'Especifica...',
+    platformFocus:'Enfoques de la Plataforma (selecciona todos los que apliquen)',
     responsible:  'Nombre del Responsable',
     responsiblePh:'Nombre completo',
     email:        'Correo de Contacto',
@@ -146,15 +140,14 @@ const TRANSLATIONS = {
     subtitle: 'Multiply — Global Network',
     heroTitle: 'Affiliation Form',
     heroSubtitle: 'Register your training program in the Multiply Global Training Platform.',
-    sidebarTitle: 'Why join?',
+    sidebarTitle: 'Why affiliate?',
     sidebarItems: [
-      'Catalog your program and connect it to the global Multiply network',
-      'Exchange students and instructors between programs across countries',
-      'Optimize resources: send and receive students internationally at lower cost',
-      'Strategic cooperation with churches, conferences and missionary agencies',
-      'Contribute to forming disciples, leaders and missionaries around the world'
+      'Global visibility within the Multiply network',
+      'Connection with other programs and leaders',
+      'Access to the Platform Quality Seal',
+      'Support for student cooperation and exchange',
+      'Alignment with the Mission Strategic Map'
     ],
-    countryPh: 'Type the country name...',
     step1: 'Identification', step1desc: 'Basic program data',
     step2: 'Details', step2desc: 'Profile and reach',
     step3: 'Alignment', step3desc: 'Strategic connection',
@@ -180,9 +173,7 @@ const TRANSLATIONS = {
     objectives:   'Program Objectives and Description',
     objectivesPh: 'Briefly describe the objectives, methodology and focus of the program...',
     strategicMap: 'Alignment with Strategic Map (select all that apply)',
-    platformFocus:'Program Focuses (select all that apply)',
-    otherLabel: 'Other',
-    otherPh: 'Specify...',
+    platformFocus:'Platform Focuses (select all that apply)',
     responsible:  'Program Leader Name',
     responsiblePh:'Full name',
     email:        'Contact Email',
@@ -210,15 +201,14 @@ const TRANSLATIONS = {
     subtitle: 'Multiply — Réseau Mondial',
     heroTitle: "Formulaire d'Affiliation",
     heroSubtitle: 'Enregistrez votre programme de formation sur la Plateforme Mondiale de Formation de Multiply.',
-    sidebarTitle: 'Pourquoi rejoindre?',
+    sidebarTitle: "Pourquoi s'affilier?",
     sidebarItems: [
-      'Cataloguez votre programme et connectez-le au réseau mondial de Multiply',
-      "Échanges d'étudiants et d'instructeurs entre programmes de différents pays",
-      "Optimisez les ressources : envoyez et recevez des étudiants à l'international",
-      'Coopération stratégique avec des églises, conférences et agences missionnaires',
-      'Contribuez à la formation de disciples, leaders et missionnaires dans le monde'
+      'Visibilité mondiale dans le réseau Multiply',
+      "Connexion avec d'autres programmes et leaders",
+      'Accès au Sceau de Qualité de la Plateforme',
+      'Soutien pour la coopération et les échanges',
+      'Alignement avec la Carte Stratégique Missionnaire'
     ],
-    countryPh: 'Saisissez le nom du pays...',
     step1: 'Identification', step1desc: 'Données de base',
     step2: 'Détails', step2desc: 'Profil et portée',
     step3: 'Alignement', step3desc: 'Connexion stratégique',
@@ -244,9 +234,7 @@ const TRANSLATIONS = {
     objectives:   'Objectifs et Description du Programme',
     objectivesPh: 'Décrivez brièvement les objectifs, la méthodologie et le focus du programme...',
     strategicMap: "Alignement avec la Carte Stratégique (sélectionnez tout ce qui s'applique)",
-    platformFocus:"Axes du Programme (sélectionnez tout ce qui s'applique)",
-    otherLabel: 'Autre',
-    otherPh: 'Précisez...',
+    platformFocus:"Axes de la Plateforme (sélectionnez tout ce qui s'applique)",
     responsible:  'Nom du Responsable',
     responsiblePh:'Nom complet',
     email:        'Email de Contact',
@@ -274,15 +262,14 @@ const TRANSLATIONS = {
     subtitle: 'Multiply — Globales Netzwerk',
     heroTitle: 'Antragsformular',
     heroSubtitle: 'Registrieren Sie Ihr Trainingsprogramm auf der Globalen Trainingsplattform von Multiply.',
-    sidebarTitle: 'Warum beitreten?',
+    sidebarTitle: 'Warum affiliieren?',
     sidebarItems: [
-      'Katalogisieren Sie Ihr Programm und verbinden Sie es mit dem globalen Multiply-Netzwerk',
-      'Studenten- und Lehrertausch zwischen Programmen verschiedener Länder',
-      'Ressourcen optimieren: Studierende international senden und empfangen',
-      'Strategische Zusammenarbeit mit Kirchen, Konferenzen und Missionsagenturen',
-      'Zur Ausbildung von Jüngern, Führern und Missionaren weltweit beitragen'
+      'Weltweite Sichtbarkeit im Multiply-Netzwerk',
+      'Verbindung mit anderen Programmen und Leitern',
+      'Zugang zum Qualitätssiegel der Plattform',
+      'Unterstützung bei Kooperation und Studentenaustausch',
+      'Ausrichtung an der Missionarischen Strategiekarte'
     ],
-    countryPh: 'Ländernamen eingeben...',
     step1: 'Identifikation', step1desc: 'Grunddaten des Programms',
     step2: 'Details', step2desc: 'Profil und Reichweite',
     step3: 'Ausrichtung', step3desc: 'Strategische Verbindung',
@@ -308,9 +295,7 @@ const TRANSLATIONS = {
     objectives:   'Programmziele und Beschreibung',
     objectivesPh: 'Beschreiben Sie kurz die Ziele, Methodik und Schwerpunkt des Programms...',
     strategicMap: 'Ausrichtung an der Strategiekarte (alle zutreffenden auswählen)',
-    platformFocus:'Programmschwerpunkte (alle zutreffenden auswählen)',
-    otherLabel: 'Sonstiges',
-    otherPh: 'Angeben...',
+    platformFocus:'Plattformschwerpunkte (alle zutreffenden auswählen)',
     responsible:  'Name des Verantwortlichen',
     responsiblePh:'Vollständiger Name',
     email:        'Kontakt-E-Mail',
@@ -340,13 +325,12 @@ const TRANSLATIONS = {
     heroSubtitle: 'ลงทะเบียนโปรแกรมการฝึกอบรมของคุณในแพลตฟอร์มการฝึกอบรมระดับโลกของ Multiply',
     sidebarTitle: 'ทำไมต้องสมัครสมาชิก?',
     sidebarItems: [
-      'จัดทำแค็ตตาล็อกโปรแกรมและเชื่อมต่อกับเครือข่ายระดับโลกของ Multiply',
-      'แลกเปลี่ยนนักศึกษาและอาจารย์ระหว่างโปรแกรมในประเทศต่างๆ',
-      'เพิ่มประสิทธิภาพทรัพยากร: ส่งและรับนักศึกษาในระดับนานาชาติ',
-      'ความร่วมมือเชิงกลยุทธ์กับคริสตจักร การประชุม และหน่วยงานมิชชันนารี',
-      'มีส่วนร่วมในการฝึกอบรมสาวก ผู้นำ และมิชชันนารีทั่วโลก'
+      'การมองเห็นระดับโลกในเครือข่าย Multiply',
+      'การเชื่อมต่อกับโปรแกรมและผู้นำอื่นๆ',
+      'การเข้าถึงตราประทับคุณภาพของแพลตฟอร์ม',
+      'การสนับสนุนความร่วมมือและการแลกเปลี่ยนนักศึกษา',
+      'การจัดแนวกับแผนที่ยุทธศาสตร์มิชชันนารี'
     ],
-    countryPh: 'พิมพ์ชื่อประเทศ...',
     step1: 'การระบุตัวตน', step1desc: 'ข้อมูลพื้นฐานของโปรแกรม',
     step2: 'รายละเอียด', step2desc: 'โปรไฟล์และการเข้าถึง',
     step3: 'การจัดแนว', step3desc: 'การเชื่อมต่อเชิงกลยุทธ์',
@@ -372,9 +356,7 @@ const TRANSLATIONS = {
     objectives:   'วัตถุประสงค์และคำอธิบายโปรแกรม',
     objectivesPh: 'อธิบายวัตถุประสงค์ วิธีการ และจุดเน้นของโปรแกรมโดยย่อ...',
     strategicMap: 'การจัดแนวกับแผนที่เชิงกลยุทธ์ (เลือกทั้งหมดที่ใช้งาน)',
-    platformFocus:'จุดเน้นของโปรแกรม (เลือกทั้งหมดที่ใช้งาน)',
-    otherLabel: 'อื่นๆ',
-    otherPh: 'ระบุ...',
+    platformFocus:'จุดเน้นของแพลตฟอร์ม (เลือกทั้งหมดที่ใช้งาน)',
     responsible:  'ชื่อผู้รับผิดชอบ',
     responsiblePh:'ชื่อเต็ม',
     email:        'อีเมลติดต่อ',
@@ -404,13 +386,12 @@ const TRANSLATIONS = {
     heroSubtitle: 'MultiplyのグローバルトレーニングプラットフォームにトレーニングプログラムをE登録してください。',
     sidebarTitle: 'なぜ加盟するのか？',
     sidebarItems: [
-      'プログラムを登録してMultiplyのグローバルネットワークに接続する',
-      '異なる国のプログラム間での学生・教師の交流',
-      'リソースの最適化：国際的に学生を送受することができる',
-      '教会、会議、宣教機関との戦略的協力',
-      '世界中で弟子、リーダー、宣教師の育成に貢献する'
+      'Multiplyネットワークでの世界的な認知度',
+      '他のプログラムやリーダーとのつながり',
+      'プラットフォーム品質シールへのアクセス',
+      '学生の協力と交流へのサポート',
+      'ミッション戦略マップとの整合性'
     ],
-    countryPh: '国名を入力...',
     step1: '識別', step1desc: 'プログラムの基本データ',
     step2: '詳細', step2desc: 'プロフィールとリーチ',
     step3: '整合性', step3desc: '戦略的つながり',
@@ -436,9 +417,7 @@ const TRANSLATIONS = {
     objectives:   'プログラムの目標と説明',
     objectivesPh: 'プログラムの目標、方法論、焦点を簡単に説明してください...',
     strategicMap: '戦略マップとの整合性（該当するものをすべて選択）',
-    platformFocus:'プログラムの焦点（該当するものをすべて選択）',
-    otherLabel: 'その他',
-    otherPh: '記入してください...',
+    platformFocus:'プラットフォームの焦点（該当するものをすべて選択）',
     responsible:  '担当者名',
     responsiblePh:'フルネーム',
     email:        '連絡先メール',
@@ -460,47 +439,14 @@ const TRANSLATIONS = {
   }
 };
 
-// ── COUNTRIES LIST — suggestions for autocomplete datalist ────
-// User can type any country, including ones not on this list.
+// ── COUNTRIES LIST (Spanish LATAM names + English) ────────────
 const COUNTRIES_LIST = [
-  'Afghanistan','Albania','Algeria','Angola','Argentina','Armenia',
-  'Australia','Austria','Azerbaijan','Bangladesh','Belarus','Belgium',
-  'Belize','Benin','Bolivia','Bosnia','Botswana','Brazil','Bulgaria',
-  'Burkina Faso','Burundi','Cambodia','Cameroon','Canada','Chad',
-  'Chile','China','Colombia','Congo','Costa Rica','Croatia','Cuba',
-  'Czech Republic','DR Congo','Denmark','Dominican Republic',
-  'Ecuador','Egypt','El Salvador','Ethiopia','Finland','France',
-  'Germany','Ghana','Greece','Guatemala','Guinea','Haiti','Honduras',
-  'Hungary','India','Indonesia','Iran','Iraq','Ireland','Israel',
-  'Italy','Ivory Coast','Jamaica','Japan','Jordan','Kazakhstan',
-  'Kenya','Laos','Lebanon','Liberia','Libya','Madagascar','Malawi',
-  'Malaysia','Mali','Mexico','Mongolia','Morocco','Mozambique',
-  'Myanmar','Nepal','Netherlands','New Zealand','Nicaragua','Nigeria',
-  'North Korea','Norway','Pakistan','Panama','Papua New Guinea',
-  'Paraguay','Peru','Philippines','Poland','Portugal','Romania',
-  'Russia','Rwanda','Saudi Arabia','Senegal','Serbia','Sierra Leone',
-  'Somalia','South Africa','South Korea','Spain','Sri Lanka','Sudan',
-  'Sweden','Switzerland','Syria','Taiwan','Tanzania','Thailand',
-  'Togo','Trinidad and Tobago','Tunisia','Turkey','Uganda','Ukraine',
-  'United Kingdom','Uruguay','USA','Uzbekistan','Venezuela','Vietnam',
-  'Yemen','Zambia','Zimbabwe',
-  // Spanish/Portuguese common spellings (aliases for autocomplete)
-  'Brasil','Canadá','Japón','México','Panamá','Tailandia','Filipinas',
-  'Alemania','España','Francia','Italia','Reino Unido','Países Bajos',
-  'Suiza','Suécia','Noruega','Dinamarca','Austrália','Nova Zelândia',
-  'Rússia','Ucrânia','Polônia','República Checa','Romênia','Hungria',
-  'Coreia do Sul','Índia','Paquistão','Indonésia','Malásia','Vietnã',
-  'Camboja','Tailândia','Japão','Mongólia','Nepal','Bangladesh',
-  'Colômbia','Venezuela','Peru','Chile','Argentina','Uruguai',
-  'Paraguai','Bolívia','Equador','Cuba','Jamaica','Haiti',
-  'República Dominicana','Trinidad e Tobago','Nicarágua',
-  'Honduras','Guatemala','El Salvador','Belize','Panamá',
-  'África do Sul','Nigéria','Quênia','Etiópia','Tanzânia','Uganda',
-  'Ruanda','Angola','Moçambique','Zâmbia','Zimbábue','Botsuana',
-  'Marrocos','Argélia','Egito','Sudão','Senegal','Gana','Camarões',
-  'Burkina Faso','Mali','Togo','Benim','Libéria','Serra Leoa','Guiné',
-  'Jordânia','Líbano','Síria','Iraque','Irã','Turquia','Israel',
-  'Arábia Saudita','Iêmen','Tunísia','Líbia','Somália',
+  'Bolivia', 'Brasil / Brazil', 'Canada', 'Chile', 'Colombia',
+  'Costa Rica', 'El Salvador', 'Estados Unidos / USA',
+  'Filipinas / Philippines', 'Guatemala', 'Honduras',
+  'Japón / Japan', 'Jordania / Jordan', 'México / Mexico',
+  'Nicaragua', 'Panamá / Panama', 'Paraguay', 'Tailandia / Thailand',
+  'Other / Otro'
 ];
 
 const REGIONS_LIST = [
@@ -633,13 +579,10 @@ function renderStep1(t) {
     <div class="form-grid-2">
       <div class="form-group">
         <label class="form-label">${t.country} <span class="required">*</span></label>
-        <input type="text" id="f-country" class="form-input" data-key="country"
-          placeholder="${t.countryPh || 'Digite o nome do país...'}"
-          list="country-datalist" autocomplete="off">
-        <datalist id="country-datalist">
-          ${COUNTRIES_LIST.map(c => `<option value="${c}">`).join('')}
-        </datalist>
-        <span class="form-error" id="err-country" style="color:#e53e3e;font-size:.775rem;display:none"></span>
+        <select id="f-country" class="form-input form-select" data-key="country">
+          <option value="">—</option>
+          ${COUNTRIES_LIST.map(c => `<option value="${c}">${c}</option>`).join('')}
+        </select>
       </div>
       <div class="form-group">
         <label class="form-label">${t.region} <span class="required">*</span></label>
@@ -698,8 +641,6 @@ function renderStep2(t) {
 function renderStep3(t) {
   const strategic = ['Mobilizing','Connecting','Witnessing','Gathering','Equipping','Growing','Multiplying','Partnering','Extending'];
   const platform  = ['Discipleship','Missionary Training','Church Planting','Cross-cultural','Leadership Development','Mobilization','Sustainability','Networking'];
-  const otherLabel = t.otherLabel || 'Other';
-  const otherPh    = t.otherPh    || 'Specify...';
   return `
     <div class="form-section-title">${t.sec3}</div>
     <div class="form-group">
@@ -709,14 +650,7 @@ function renderStep3(t) {
           <label class="checkbox-item" id="sm-${i}">
             <input type="checkbox" value="${s}" class="strategic-check"> ${i+1}. ${s}
           </label>`).join('')}
-        <label class="checkbox-item" id="sm-other">
-          <input type="checkbox" value="__other__" class="strategic-check" id="sm-other-chk"
-            onchange="document.getElementById('sm-other-text').style.display=this.checked?'block':'none'">
-          ${otherLabel}
-        </label>
       </div>
-      <input type="text" id="sm-other-text" class="form-input" placeholder="${otherPh}"
-        style="display:none;margin-top:8px" data-key="strategicOther">
     </div>
     <div class="form-group" style="margin-top:20px">
       <label class="form-label">${t.platformFocus}</label>
@@ -725,14 +659,7 @@ function renderStep3(t) {
           <label class="checkbox-item" id="pf-${i}">
             <input type="checkbox" value="${p}" class="platform-check"> ${p}
           </label>`).join('')}
-        <label class="checkbox-item" id="pf-other">
-          <input type="checkbox" value="__other__" class="platform-check" id="pf-other-chk"
-            onchange="document.getElementById('pf-other-text').style.display=this.checked?'block':'none'">
-          ${otherLabel}
-        </label>
       </div>
-      <input type="text" id="pf-other-text" class="form-input" placeholder="${otherPh}"
-        style="display:none;margin-top:8px" data-key="platformOther">
     </div>
     <div style="display:flex;gap:16px;justify-content:space-between;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)">
       <button class="btn btn-outline" onclick="goStep(2)">${t.btnBack}</button>
@@ -782,15 +709,9 @@ function saveFormValues() {
   document.querySelectorAll('[data-key]').forEach(el => {
     formData[el.dataset.key] = el.value;
   });
-  // Save checkboxes — replace __other__ with the typed text
-  const smOtherText = (document.getElementById('sm-other-text') || {}).value || '';
-  const pfOtherText = (document.getElementById('pf-other-text') || {}).value || '';
-  const strategic = [...document.querySelectorAll('.strategic-check:checked')]
-    .map(c => c.value === '__other__' ? (smOtherText.trim() || 'Outro') : c.value)
-    .filter(Boolean);
-  const platform  = [...document.querySelectorAll('.platform-check:checked')]
-    .map(c => c.value === '__other__' ? (pfOtherText.trim() || 'Outro') : c.value)
-    .filter(Boolean);
+  // Save checkboxes
+  const strategic = [...document.querySelectorAll('.strategic-check:checked')].map(c => c.value);
+  const platform  = [...document.querySelectorAll('.platform-check:checked')].map(c => c.value);
   if (strategic.length) formData.strategicFocuses = strategic;
   if (platform.length)  formData.platformFocuses  = platform;
 }
@@ -802,35 +723,15 @@ function restoreFormValues() {
     }
   });
   // Restore checkboxes
-  const knownStrategic = ['Mobilizing','Connecting','Witnessing','Gathering','Equipping','Growing','Multiplying','Partnering','Extending'];
-  const knownPlatform  = ['Discipleship','Missionary Training','Church Planting','Cross-cultural','Leadership Development','Mobilization','Sustainability','Networking'];
   if (formData.strategicFocuses) {
     document.querySelectorAll('.strategic-check').forEach(c => {
-      if (c.value === '__other__') {
-        const custom = formData.strategicFocuses.find(v => !knownStrategic.includes(v));
-        c.checked = !!custom;
-        if (custom) {
-          const txt = document.getElementById('sm-other-text');
-          if (txt) { txt.value = custom; txt.style.display = 'block'; }
-        }
-      } else {
-        c.checked = formData.strategicFocuses.includes(c.value);
-      }
+      c.checked = formData.strategicFocuses.includes(c.value);
       c.closest('.checkbox-item').classList.toggle('checked', c.checked);
     });
   }
   if (formData.platformFocuses) {
     document.querySelectorAll('.platform-check').forEach(c => {
-      if (c.value === '__other__') {
-        const custom = formData.platformFocuses.find(v => !knownPlatform.includes(v));
-        c.checked = !!custom;
-        if (custom) {
-          const txt = document.getElementById('pf-other-text');
-          if (txt) { txt.value = custom; txt.style.display = 'block'; }
-        }
-      } else {
-        c.checked = formData.platformFocuses.includes(c.value);
-      }
+      c.checked = formData.platformFocuses.includes(c.value);
       c.closest('.checkbox-item').classList.toggle('checked', c.checked);
     });
   }
@@ -910,103 +811,17 @@ function submitForm() {
     platformFocuses:  formData.platformFocuses  || [],
   };
 
-  // Save to localStorage immediately
-  const existing = JSON.parse(localStorage.getItem('multiply_programs') || 'null') || [];
-  program.id = Date.now();
-  program.submittedAt = new Date().toISOString();
-  program.aiStatus = 'pending'; // will be set to 'done' after AI runs
-  existing.push(program);
-  localStorage.setItem('multiply_programs', JSON.stringify(existing));
-
-  // Trigger AI auto-categorization in background (non-blocking)
-  runAiCategorization(program);
+  // Save to localStorage
+  if (typeof addProgram === 'function') {
+    addProgram(program);
+  } else {
+    const existing = JSON.parse(localStorage.getItem('multiply_programs') || 'null') || [];
+    program.id = Date.now();
+    existing.push(program);
+    localStorage.setItem('multiply_programs', JSON.stringify(existing));
+  }
 
   showSuccess();
-}
-
-// ── AI AUTO-CATEGORIZATION ──────────────────────────────────────
-// Runs after form submission. Calls Anthropic API (key set by admin in dashboard).
-// Updates the saved program with AI-generated analysis.
-async function runAiCategorization(program) {
-  const apiKey = localStorage.getItem('multiply_anthropic_key');
-  if (!apiKey) return; // admin hasn't configured the key yet
-
-  const STRATEGIC = ['Mobilizing','Connecting','Witnessing','Gathering','Equipping','Growing','Multiplying','Partnering','Extending'];
-  const PLATFORM  = ['Discipleship','Missionary Training','Church Planting','Cross-cultural','Leadership Development','Mobilization','Sustainability','Networking'];
-
-  const prompt = `You are an assistant for the Multiply Global Training Platform, a network connecting missionary training programs worldwide.
-
-A new program has registered. Based on the information below, provide:
-1. **Strategic Map alignment**: which of these 9 points best describe this program (choose 1-3): ${STRATEGIC.join(', ')}
-2. **Program focuses**: which of these best describe the program's focus (choose 1-4): ${PLATFORM.join(', ')}
-3. **Duration category**: one of: mobilizacao (1-7 days), curto (up to 1 month), medio (1-6 months), longo (6+ months)
-4. **Brief analysis** (2-3 sentences in Portuguese): what this program does, who it serves, and its strategic value to the network.
-
-Program data:
-- Name: ${program.name}
-- Country: ${program.country || 'not specified'}
-- Region: ${program.region || 'not specified'}
-- Duration: ${program.duration}
-- Age range: ${program.ageRange || 'not specified'}
-- Annual participants: ${program.annualParticipants || 'not specified'}
-- Objectives: ${program.objectives || 'not specified'}
-- Existing strategic focuses: ${(program.strategicFocuses || []).join(', ') || 'none selected'}
-- Existing platform focuses: ${(program.platformFocuses || []).join(', ') || 'none selected'}
-
-Respond ONLY with valid JSON in this exact format:
-{
-  "strategicFocuses": ["...", "..."],
-  "platformFocuses": ["...", "..."],
-  "duration": "...",
-  "analysis": "..."
-}`;
-
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-        'content-type': 'application/json',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-haiku-4-5',
-        max_tokens: 512,
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-
-    if (!res.ok) return;
-    const data = await res.json();
-    const text = data.content?.[0]?.text || '';
-    const jsonMatch = text.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) return;
-
-    const ai = JSON.parse(jsonMatch[0]);
-
-    // Update the saved program
-    const programs = JSON.parse(localStorage.getItem('multiply_programs') || '[]');
-    const idx = programs.findIndex(x => x.id === program.id);
-    if (idx === -1) return;
-
-    // Only override empty fields — don't overwrite what user manually filled
-    if (ai.strategicFocuses?.length && !(programs[idx].strategicFocuses || []).length) {
-      programs[idx].strategicFocuses = ai.strategicFocuses.filter(v => STRATEGIC.includes(v));
-    }
-    if (ai.platformFocuses?.length && !(programs[idx].platformFocuses || []).length) {
-      programs[idx].platformFocuses = ai.platformFocuses.filter(v => PLATFORM.includes(v));
-    }
-    if (ai.duration && !programs[idx].duration) {
-      programs[idx].duration = ai.duration;
-    }
-    programs[idx].aiAnalysis = ai.analysis || '';
-    programs[idx].aiStatus   = 'done';
-
-    localStorage.setItem('multiply_programs', JSON.stringify(programs));
-  } catch (e) {
-    // AI failed silently — program is still saved, admin can categorize manually
-  }
 }
 
 function showSuccess() {
