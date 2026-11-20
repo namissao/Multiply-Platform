@@ -825,9 +825,15 @@ const PROGRAMS_DB = [
 function getAllPrograms() {
   const stored = localStorage.getItem('multiply_programs');
   if (stored) {
-    try { return JSON.parse(stored); } catch(e) {}
+    try {
+      const parsed = JSON.parse(stored);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    } catch(e) {}
   }
-  return [...PROGRAMS_DB];
+  // Nothing valid in localStorage — seed with demo data
+  const seed = [...PROGRAMS_DB];
+  localStorage.setItem('multiply_programs', JSON.stringify(seed));
+  return seed;
 }
 
 function savePrograms(programs) {
