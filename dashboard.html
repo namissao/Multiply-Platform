@@ -293,10 +293,20 @@
 <!-- ── SCRIPTS ────────────────────────────────────────────── -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-<script src="js/data.js"></script>
-<script src="js/export.js"></script>
-<script src="js/form-editor.js"></script>
-<script src="js/dashboard.js"></script>
+<script src="js/data.js?v=3"></script>
+<script src="js/export.js?v=3"></script>
+<script src="js/form-editor.js?v=3"></script>
+<script src="js/dashboard.js?v=3"></script>
+<script>
+// Força reset imediato se a versão do seed for antiga
+(function(){
+  const sv = parseInt(localStorage.getItem('multiply_seed_version') || '0', 10);
+  if (sv < 2) {
+    localStorage.removeItem('multiply_programs');
+    localStorage.removeItem('multiply_seed_version');
+  }
+})();
+</script>
 
 </body>
 </html>
