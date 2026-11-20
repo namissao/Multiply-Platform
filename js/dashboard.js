@@ -135,9 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (browser.startsWith('en')) currentLang = 'en';
   else currentLang = 'pt-BR';
 
-  // Always restore demo data — wipe whatever is in localStorage
-  // so the PROGRAMS_DB is always shown fresh on load.
-  localStorage.removeItem('multiply_programs');
+  // If nothing saved yet, load the demo data once
+  if (!localStorage.getItem('multiply_programs')) {
+    localStorage.setItem('multiply_programs', JSON.stringify(PROGRAMS_DB));
+  }
 
   allPrograms = getAllPrograms();
   filteredPrograms = [...allPrograms];
