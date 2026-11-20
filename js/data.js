@@ -61,7 +61,7 @@ const COUNTRY_COORDS = {
 
 // ============================================================
 // PROGRAM DATABASE — dados reais da Plataforma Multiply
-// Fonte: PTB - Plataforma Global de Treinamento Multiply - 08-17-26
+// Fonte: GLOBAL TRAINING PLATFORM - 06-11-26
 // ============================================================
 const PROGRAMS_DB = [
 
@@ -935,6 +935,28 @@ const PROGRAMS_DB = [
     platformFocuses: [],
     qualitySeal: false,
     lat: -16.290, lng: -63.5887
+  },
+
+  // Programa #33 — Imersión (Paraguay)
+  {
+    id: 41,
+    name: 'Imersión',
+    country: 'Paraguay',
+    region: 'América do Sul',
+    duration: DURATION.CURTO,
+    durationDetail: '10 a 30 dias',
+    yearCreated: 2025,
+    ageRange: '18+',
+    annualParticipants: 160,
+    monthlyCost: 160,
+    objectives: 'Membros de igrejas que desejam evangelizar e fazer discípulos',
+    responsiblePerson: 'Rodrigo L. Pereira',
+    website: '',
+    instagram: '',
+    strategicFocuses: [],
+    platformFocuses: [],
+    qualitySeal: false,
+    lat: -23.443, lng: -58.4438
   }
 ];
 
@@ -943,7 +965,7 @@ const PROGRAMS_DB = [
 // ============================================================
 
 // Versão do seed — incrementar sempre que PROGRAMS_DB mudar
-const SEED_VERSION = 2;
+const SEED_VERSION = 3;
 
 function getAllPrograms() {
   // Se a versão do seed mudou, descarta localStorage e recarrega com dados novos
