@@ -942,7 +942,19 @@ const PROGRAMS_DB = [
 // DATA HELPERS
 // ============================================================
 
+// Versão do seed — incrementar sempre que PROGRAMS_DB mudar
+const SEED_VERSION = 2;
+
 function getAllPrograms() {
+  // Se a versão do seed mudou, descarta localStorage e recarrega com dados novos
+  const storedVersion = parseInt(localStorage.getItem('multiply_seed_version') || '0', 10);
+  if (storedVersion < SEED_VERSION) {
+    const seed = [...PROGRAMS_DB];
+    localStorage.setItem('multiply_programs', JSON.stringify(seed));
+    localStorage.setItem('multiply_seed_version', String(SEED_VERSION));
+    return seed;
+  }
+
   const stored = localStorage.getItem('multiply_programs');
   if (stored) {
     try {
@@ -950,9 +962,10 @@ function getAllPrograms() {
       if (Array.isArray(parsed) && parsed.length > 0) return parsed;
     } catch(e) {}
   }
-  // Nothing valid in localStorage — seed with demo data
+  // Nothing valid in localStorage — seed with real data
   const seed = [...PROGRAMS_DB];
   localStorage.setItem('multiply_programs', JSON.stringify(seed));
+  localStorage.setItem('multiply_seed_version', String(SEED_VERSION));
   return seed;
 }
 
