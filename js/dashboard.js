@@ -135,12 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (browser.startsWith('en')) currentLang = 'en';
   else currentLang = 'pt-BR';
 
-  // If localStorage has fewer programs than the built-in demo set,
-  // restore the full demo data (protects against accidental deletes in demo mode)
-  const stored = JSON.parse(localStorage.getItem('multiply_programs') || 'null');
-  if (!stored || stored.length < PROGRAMS_DB.length) {
-    localStorage.removeItem('multiply_programs');
-  }
+  // Always restore demo data — wipe whatever is in localStorage
+  // so the PROGRAMS_DB is always shown fresh on load.
+  localStorage.removeItem('multiply_programs');
 
   allPrograms = getAllPrograms();
   filteredPrograms = [...allPrograms];
