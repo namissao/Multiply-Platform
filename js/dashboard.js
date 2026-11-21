@@ -277,7 +277,8 @@ function setFilterOptions(id, options) {
 // ── FILTERS ───────────────────────────────────────────────────
 function populateFilters() {
   const t = DASH_LANGS[currentLang];
-  const countries = [...new Set(allPrograms.map(p => p.country).filter(Boolean))].sort();
+  // programs can have multiple countries — flatten and dedupe
+  const countries = [...new Set(allPrograms.flatMap(p => p.countries || []).filter(Boolean))].sort();
   const regions   = [...new Set(allPrograms.map(p => p.region).filter(Boolean))].sort();
 
   const fCountry = document.getElementById('filter-country');
@@ -308,12 +309,14 @@ function applyFilters() {
     // mobilizacao merged into curto
     const effDur = p.duration === 'mobilizacao' ? 'curto' : p.duration;
     if (dur && effDur !== dur) return false;
-    if (country && p.country  !== country) return false;
+    // country filter: check if any of program's countries match
+    if (country && !(p.countries || []).includes(country)) return false;
     if (region  && p.region   !== region) return false;
     if (seal === 'yes' && !p.qualitySeal) return false;
     if (seal === 'no'  &&  p.qualitySeal) return false;
+    const countryStr = (p.countries || []).join(' ').toLowerCase();
     if (search && !p.name?.toLowerCase().includes(search) &&
-                  !p.country?.toLowerCase().includes(search) &&
+                  !countryStr.includes(search) &&
                   !p.objectives?.toLowerCase().includes(search)) return false;
     return true;
   });
@@ -353,7 +356,9 @@ function renderStats() {
   setInner('stat-longo',    s.byDuration.longo.length);
   setInner('stat-seal',     s.withSeal);
   setInner('stat-part',     s.totalParticipants.toLocaleString());
-  setInner('stat-countries', Object.keys(s.countByCountry).length);
+  // Count unique countries across all filtered programs
+  const uniqueCountries = new Set(filteredPrograms.flatMap(p => p.countries || []));
+  setInner('stat-countries', uniqueCountries.size);
 }
 
 function setInner(id, val) {
@@ -408,9 +413,12 @@ function renderBarChart() {
   const ctx = document.getElementById('chart-bar');
   if (!ctx) return;
 
+  // Each program may have multiple countries — count each
   const countByCountry = {};
   filteredPrograms.forEach(p => {
-    if (p.country) countByCountry[p.country] = (countByCountry[p.country] || 0) + 1;
+    (p.countries || []).forEach(c => {
+      if (c) countByCountry[c] = (countByCountry[c] || 0) + 1;
+    });
   });
 
   const sorted = Object.entries(countByCountry).sort((a, b) => b[1] - a[1]).slice(0, 12);
@@ -478,7 +486,7 @@ function renderTable() {
   tbody.innerHTML = filteredPrograms.map(p => `
     <tr>
       <td class="td-name">${p.name}</td>
-      <td class="td-country">${p.country || '—'}</td>
+      <td class="td-country">${(p.countries||[]).join(', ') || '—'}</td>
       <td><span class="badge badge-${p.duration === 'mobilizacao' ? 'curto' : p.duration}">${getDurLabel(p.duration)}</span></td>
       <td>${p.yearCreated || '—'}</td>
       <td>${p.ageRange || '—'}</td>
@@ -523,7 +531,7 @@ function showProgramModal(id) {
   const t = DASH_LANGS[currentLang];
 
   document.getElementById('modal-title').textContent    = p.name;
-  document.getElementById('modal-country').textContent  = p.country || '—';
+  document.getElementById('modal-country').textContent  = (p.countries||[]).join(', ') || '—';
   document.getElementById('modal-region').textContent   = p.region  || '—';
   document.getElementById('modal-duration').textContent = getDurLabel(p.duration);
   document.getElementById('modal-year').textContent     = p.yearCreated || '—';
@@ -587,19 +595,28 @@ function renderMap() {
   markers.forEach(m => map.removeLayer(m));
   markers = [];
 
-  const byCoords = {};
+  // Build a map of country → programs that operate there
+  // A program with countries:['Canada','Panama'] appears on both pins
+  const byCountry = {};
   filteredPrograms.forEach(p => {
-    const key = `${p.lat},${p.lng}`;
-    if (p.lat && p.lng) {
-      if (!byCoords[key]) byCoords[key] = { lat: p.lat, lng: p.lng, programs: [] };
-      byCoords[key].programs.push(p);
-    }
+    (p.countries || []).forEach(c => {
+      const coords = COUNTRY_COORDS[c];
+      if (!coords) return;
+      if (!byCountry[c]) byCountry[c] = { lat: coords.lat, lng: coords.lng, country: c, programs: [] };
+      byCountry[c].programs.push(p);
+    });
   });
 
-  Object.values(byCoords).forEach(group => {
+  Object.values(byCountry).forEach(group => {
     const count = group.programs.length;
-    const dur   = group.programs[0].duration === 'mobilizacao' ? 'curto' : group.programs[0].duration;
-    const color = COLORS[dur] || '#4A6FA5';
+    // Use dominant duration color (most common in group)
+    const durCounts = {};
+    group.programs.forEach(p => {
+      const d = p.duration === 'mobilizacao' ? 'curto' : p.duration;
+      durCounts[d] = (durCounts[d] || 0) + 1;
+    });
+    const domDur = Object.entries(durCounts).sort((a,b) => b[1]-a[1])[0]?.[0] || 'curto';
+    const color = COLORS[domDur] || '#4A6FA5';
     const size  = count === 1 ? 10 : count <= 3 ? 14 : count <= 7 ? 18 : 24;
 
     const icon = L.divIcon({
@@ -623,7 +640,7 @@ function renderMap() {
 
     const popup = L.popup({ maxWidth: 240 }).setContent(`
       <div style="font-family:Inter,sans-serif;padding:4px;min-width:180px">
-        <div style="font-weight:700;color:#1A2745;margin-bottom:8px;font-size:13px">${group.programs[0].country}</div>
+        <div style="font-weight:700;color:#1A2745;margin-bottom:8px;font-size:13px">${group.country}</div>
         ${names}
       </div>`);
 

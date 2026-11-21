@@ -66,98 +66,33 @@ const COUNTRY_COORDS = {
 const PROGRAMS_DB = [
 
   // ── MOBILIZAÇÃO (1–7 dias) ─────────────────────────────
-  // Programa #1 — SOAR (4 variações — contam como 1 programa)
+  // Programa #1 — SOAR (EUA + Winnipeg + Manitoba + Saskatoon → 1 programa, múltiplos países)
 
   {
     id: 1,
-    groupId: 'SOAR',
-    name: 'SOAR EUA',
-    country: 'USA',
+    name: 'SOAR',
+    countries: ['USA', 'Canada'],
     region: 'América do Norte',
     duration: DURATION.MOBILIZACAO,
     durationDetail: '2 a 4 dias',
     yearCreated: 1988,
     ageRange: null,
-    annualParticipants: null,
-    monthlyCost: null,
-    objectives: 'Líderes que caminham em missão',
-    responsiblePerson: null,
-    website: '',
-    instagram: '',
-    strategicFocuses: [],
-    platformFocuses: [],
-    qualitySeal: false,
-    lat: 37.0902, lng: -95.7129
-  },
-  {
-    id: 2,
-    groupId: 'SOAR',
-    name: 'SOAR Winnipeg',
-    country: 'Canada',
-    region: 'América do Norte',
-    duration: DURATION.MOBILIZACAO,
-    durationDetail: '2 a 4 dias',
-    yearCreated: 1999,
-    ageRange: null,
     annualParticipants: 1000,
     monthlyCost: 450,
-    objectives: 'Líderes que caminham em missão',
-    responsiblePerson: 'Tammy',
+    objectives: 'Líderes que caminham em missão — EUA (desde 1988) e Canada: Winnipeg, Manitoba e Saskatoon (desde 1999)',
+    responsiblePerson: 'Tammy / Ryan/Terri Epp',
     website: '',
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 56.1304, lng: -106.3468
-  },
-  {
-    id: 3,
-    groupId: 'SOAR',
-    name: 'SOAR Manitoba',
-    country: 'Canada',
-    region: 'América do Norte',
-    duration: DURATION.MOBILIZACAO,
-    durationDetail: '2 a 4 dias',
-    yearCreated: 1999,
-    ageRange: null,
-    annualParticipants: null,
-    monthlyCost: null,
-    objectives: 'Líderes que caminham em missão',
-    responsiblePerson: 'Tammy + líderes MB',
-    website: '',
-    instagram: '',
-    strategicFocuses: [],
-    platformFocuses: [],
-    qualitySeal: false,
-    lat: 56.1304, lng: -106.3468
-  },
-  {
-    id: 4,
-    groupId: 'SOAR',
-    name: 'SOAR Saskatoon',
-    country: 'Canada',
-    region: 'América do Norte',
-    duration: DURATION.MOBILIZACAO,
-    durationDetail: '2 a 4 dias',
-    yearCreated: 1999,
-    ageRange: null,
-    annualParticipants: null,
-    monthlyCost: null,
-    objectives: 'Líderes que caminham em missão',
-    responsiblePerson: 'Ryan/Terri Epp',
-    website: '',
-    instagram: '',
-    strategicFocuses: [],
-    platformFocuses: [],
-    qualitySeal: false,
-    lat: 56.1304, lng: -106.3468
+    qualitySeal: false
   },
 
   // Programa #2 — FOCUS
   {
     id: 5,
     name: 'FOCUS',
-    country: 'Canada',
+    countries: ['Canada'],
     region: 'América do Norte',
     duration: DURATION.MEDIO,
     durationDetail: '6 meses',
@@ -171,16 +106,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 56.1304, lng: -106.3468
+    qualitySeal: false
   },
 
-  // Programa #3 — ACTION (2 variações — contam como 1 programa)
+  // Programa #3 — ACTION (Canada + Panamá → 1 programa, múltiplos países)
   {
     id: 6,
-    groupId: 'ACTION',
     name: 'ACTION',
-    country: 'Canada',
+    countries: ['Canada', 'Panama'],
     region: 'América do Norte',
     duration: DURATION.LONGO,
     durationDetail: '8 meses',
@@ -188,42 +121,20 @@ const PROGRAMS_DB = [
     ageRange: '18 a 24',
     annualParticipants: 18,
     monthlyCost: 5000,
-    objectives: 'Jovens cristãos de igrejas locais',
+    objectives: 'Jovens cristãos de igrejas locais — Canada/Panamá (1990/1994) e USA/Filipinas/México',
     responsiblePerson: 'Ryan/Terri Epp',
     website: '',
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 56.1304, lng: -106.3468
-  },
-  {
-    id: 7,
-    groupId: 'ACTION',
-    name: 'ACTION',
-    country: 'Panama',
-    region: 'América Central',
-    duration: DURATION.LONGO,
-    durationDetail: '8 meses',
-    yearCreated: 1994,
-    ageRange: '18 a 24',
-    annualParticipants: null,
-    monthlyCost: 5000,
-    objectives: 'Jovens cristãos de igrejas locais',
-    responsiblePerson: 'Ryan/Terri Epp',
-    website: '',
-    instagram: '',
-    strategicFocuses: [],
-    platformFocuses: [],
-    qualitySeal: false,
-    lat: 8.538, lng: -80.7821
+    qualitySeal: false
   },
 
   // Programa #4 — ANTIOCH SCHOOL
   {
     id: 9,
     name: 'ANTIOCH SCHOOL',
-    country: 'Middle East',
+    countries: ['Middle East'],
     region: 'Oriente Médio / Norte da África',
     duration: DURATION.MOBILIZACAO,
     durationDetail: '5 a 7 dias',
@@ -237,15 +148,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 29.3117, lng: 47.4818
+    qualitySeal: false
   },
 
   // Programa #5 — Escola Lucas 10
   {
     id: 10,
     name: 'Escola Lucas 10',
-    country: 'Canada',
+    countries: ['Canada'],
     region: 'América do Norte',
     duration: DURATION.MOBILIZACAO,
     durationDetail: '3 dias',
@@ -259,15 +169,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 56.1304, lng: -106.3468
+    qualitySeal: false
   },
 
   // Programa #6 — DMM
   {
     id: 11,
     name: 'DMM',
-    country: 'Canada',
+    countries: ['Canada'],
     region: 'América do Norte',
     duration: DURATION.MOBILIZACAO,
     durationDetail: '5 a 7 dias',
@@ -281,15 +190,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 56.1304, lng: -106.3468
+    qualitySeal: false
   },
 
   // Programa #7 — ADIME MAS
   {
     id: 12,
     name: 'ADIME MAS',
-    country: 'Mexico',
+    countries: ['Mexico'],
     region: 'América do Norte',
     duration: DURATION.CURTO,
     durationDetail: '3 semanas',
@@ -303,15 +211,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 23.6345, lng: -102.5528
+    qualitySeal: false
   },
 
   // Programa #8 — HADIME RAÍCES
   {
     id: 13,
     name: 'HADIME RAÍCES',
-    country: 'Mexico',
+    countries: ['Mexico'],
     region: 'América do Norte',
     duration: DURATION.MEDIO,
     durationDetail: '6 meses',
@@ -325,15 +232,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 23.6345, lng: -102.5528
+    qualitySeal: false
   },
 
   // Programa #9 — ZOE PURA VIDA
   {
     id: 14,
     name: 'ZOE PURA VIDA',
-    country: 'Costa Rica',
+    countries: ['Costa Rica'],
     region: 'América Central',
     duration: DURATION.MOBILIZACAO,
     durationDetail: '1 semana',
@@ -347,15 +253,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 9.7489, lng: -83.7534
+    qualitySeal: false
   },
 
   // Programa #10 — ZOE PURA VIDA Adolescentes
   {
     id: 15,
     name: 'ZOE PURA Adolescentes',
-    country: 'Costa Rica',
+    countries: ['Costa Rica'],
     region: 'América Central',
     duration: DURATION.MOBILIZACAO,
     durationDetail: '1 semana',
@@ -369,15 +274,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 9.7489, lng: -83.7534
+    qualitySeal: false
   },
 
   // Programa #11 — ZOE PURA VIDA Crianças
   {
     id: 16,
     name: 'ZOE PURA VIDA Crianças',
-    country: 'Costa Rica',
+    countries: ['Costa Rica'],
     region: 'América Central',
     duration: DURATION.MOBILIZACAO,
     durationDetail: '3 dias',
@@ -391,15 +295,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 9.7489, lng: -83.7534
+    qualitySeal: false
   },
 
   // Programa #12 — DMI MEXICO
   {
     id: 17,
     name: 'DMI - MEXICO',
-    country: 'Mexico',
+    countries: ['Mexico'],
     region: 'América do Norte',
     duration: DURATION.MOBILIZACAO,
     durationDetail: '5 dias',
@@ -413,15 +316,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 23.6345, lng: -102.5528
+    qualitySeal: false
   },
 
   // Programa #13 — ESLA
   {
     id: 18,
     name: 'ESLA',
-    country: 'Brazil',
+    countries: ['Brazil'],
     region: 'América do Sul',
     duration: DURATION.MEDIO,
     durationDetail: '6 meses',
@@ -435,15 +337,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: -14.235, lng: -51.9253
+    qualitySeal: false
   },
 
   // Programa #14 — DIP
   {
     id: 19,
     name: 'DIP',
-    country: 'Brazil',
+    countries: ['Brazil'],
     region: 'América do Sul',
     duration: DURATION.LONGO,
     durationDetail: '11 meses',
@@ -457,15 +358,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: -14.235, lng: -51.9253
+    qualitySeal: false
   },
 
   // Programa #15 — ZOE Mega Vida
   {
     id: 20,
     name: 'ZOE Mega Vida',
-    country: 'Brazil',
+    countries: ['Brazil'],
     region: 'América do Sul',
     duration: DURATION.CURTO,
     durationDetail: '20 dias',
@@ -479,15 +379,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: -14.235, lng: -51.9253
+    qualitySeal: false
   },
 
   // Programa #16 — ZOE Disciples
   {
     id: 21,
     name: 'ZOE Disciples',
-    country: 'Brazil',
+    countries: ['Brazil'],
     region: 'América do Sul',
     duration: DURATION.CURTO,
     durationDetail: '10 dias',
@@ -501,15 +400,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: -14.235, lng: -51.9253
+    qualitySeal: false
   },
 
   // Programa #17 — ZOE Kids
   {
     id: 22,
     name: 'ZOE Kids',
-    country: 'Brazil',
+    countries: ['Brazil'],
     region: 'América do Sul',
     duration: DURATION.MOBILIZACAO,
     durationDetail: '5 dias',
@@ -523,15 +421,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: -14.235, lng: -51.9253
+    qualitySeal: false
   },
 
   // Programa #18 — EVERY CHURCH CAN (Brasil / América Latina)
   {
     id: 23,
     name: 'EVERY CHURCH CAN',
-    country: 'Brazil',
+    countries: ['Brazil'],
     region: 'América do Sul',
     duration: DURATION.MOBILIZACAO,
     durationDetail: '2 dias',
@@ -545,15 +442,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: -14.235, lng: -51.9253
+    qualitySeal: false
   },
 
   // Programa #19 — METANOIA
   {
     id: 24,
     name: 'METANOIA',
-    country: 'Brazil',
+    countries: ['Brazil'],
     region: 'América do Sul',
     duration: DURATION.CURTO,
     durationDetail: '15 dias',
@@ -567,15 +463,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: -14.235, lng: -51.9253
+    qualitySeal: false
   },
 
   // Programa #20 — RADICAIS
   {
     id: 25,
     name: 'RADICAIS',
-    country: 'Brazil',
+    countries: ['Brazil'],
     region: 'América do Sul',
     duration: DURATION.MEDIO,
     durationDetail: '3 meses',
@@ -589,15 +484,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: -14.235, lng: -51.9253
+    qualitySeal: false
   },
 
   // Programa #21 — DMI COLOMBIA
   {
     id: 29,
     name: 'DMI COLOMBIA',
-    country: 'Colombia',
+    countries: ['Colombia'],
     region: 'América do Sul',
     duration: DURATION.CURTO,
     durationDetail: '15 dias',
@@ -611,15 +505,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 4.5709, lng: -74.2973
+    qualitySeal: false
   },
 
   // Programa #25 — DMI PANAMA
   {
     id: 30,
     name: 'DMI PANAMA',
-    country: 'Panama',
+    countries: ['Panama'],
     region: 'América Central',
     duration: DURATION.CURTO,
     durationDetail: '2 semanas',
@@ -633,15 +526,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 8.538, lng: -80.7821
+    qualitySeal: false
   },
 
   // Programa #26 — DMI Costa Rica
   {
     id: 31,
     name: 'DMI Costa Rica',
-    country: 'Costa Rica',
+    countries: ['Costa Rica'],
     region: 'América Central',
     duration: DURATION.CURTO,
     durationDetail: '2 semanas',
@@ -655,15 +547,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 9.7489, lng: -83.7534
+    qualitySeal: false
   },
 
   // Programa #27 — DMI NICARAGUA
   {
     id: 32,
     name: 'DMI NICARAGUA',
-    country: 'Nicaragua',
+    countries: ['Nicaragua'],
     region: 'América Central',
     duration: DURATION.CURTO,
     durationDetail: '2 semanas',
@@ -677,15 +568,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 12.8654, lng: -85.2072
+    qualitySeal: false
   },
 
   // Programa #28 — DMI HONDURAS
   {
     id: 33,
     name: 'DMI HONDURAS',
-    country: 'Honduras',
+    countries: ['Honduras'],
     region: 'América Central',
     duration: DURATION.CURTO,
     durationDetail: '2 semanas',
@@ -699,15 +589,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 15.1999, lng: -86.2419
+    qualitySeal: false
   },
 
   // Programa #29 — DMI EL SALVADOR
   {
     id: 34,
     name: 'DMI EL SALVADOR',
-    country: 'El Salvador',
+    countries: ['El Salvador'],
     region: 'América Central',
     duration: DURATION.CURTO,
     durationDetail: '2 semanas',
@@ -721,15 +610,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 13.7942, lng: -88.8965
+    qualitySeal: false
   },
 
   // Programa #30 — DMI GUATEMALA
   {
     id: 35,
     name: 'DMI GUATEMALA',
-    country: 'Guatemala',
+    countries: ['Guatemala'],
     region: 'América Central',
     duration: DURATION.CURTO,
     durationDetail: '2 semanas',
@@ -743,15 +631,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 15.7835, lng: -90.2308
+    qualitySeal: false
   },
 
   // Programa #31 — Escola T. Intertribal Yavisa
   {
     id: 36,
     name: 'Escola T. Intertribal Yavisa',
-    country: 'Panama',
+    countries: ['Panama'],
     region: 'América Central',
     duration: DURATION.MEDIO,
     durationDetail: '6 meses',
@@ -765,15 +652,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 8.538, lng: -80.7821
+    qualitySeal: false
   },
 
   // Programa #29 — TRECK (Canada)
   {
     id: 37,
     name: 'TRECK',
-    country: 'Canada',
+    countries: ['Canada'],
     region: 'América do Norte',
     duration: DURATION.MOBILIZACAO,
     durationDetail: null,
@@ -787,15 +673,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 56.1304, lng: -106.3468
+    qualitySeal: false
   },
 
   // Programa #30 — LTM - Mountain View Church (USA)
   {
     id: 38,
     name: 'LTM - Mountain View Church',
-    country: 'USA',
+    countries: ['USA'],
     region: 'América do Norte',
     duration: DURATION.MOBILIZACAO,
     durationDetail: null,
@@ -809,15 +694,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: 37.0902, lng: -95.7129
+    qualitySeal: false
   },
 
   // Programa #31 — EVERY CHURCH CAN Chile
   {
     id: 39,
     name: 'EVERY CHURCH CAN',
-    country: 'Chile',
+    countries: ['Chile'],
     region: 'América do Sul',
     duration: DURATION.MOBILIZACAO,
     durationDetail: '2 a 4 dias',
@@ -831,15 +715,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: -35.675, lng: -71.543
+    qualitySeal: false
   },
 
   // Programa #35 — GPS Bolivia
   {
     id: 40,
     name: 'GPS',
-    country: 'Bolivia',
+    countries: ['Bolivia'],
     region: 'América do Sul',
     duration: DURATION.CURTO,
     durationDetail: '3 a 30 dias',
@@ -853,15 +736,14 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: -16.290, lng: -63.5887
+    qualitySeal: false
   },
 
   // Programa #33 — Imersión (Paraguay)
   {
     id: 41,
     name: 'Imersión',
-    country: 'Paraguay',
+    countries: ['Paraguay'],
     region: 'América do Sul',
     duration: DURATION.CURTO,
     durationDetail: '10 a 30 dias',
@@ -875,8 +757,7 @@ const PROGRAMS_DB = [
     instagram: '',
     strategicFocuses: [],
     platformFocuses: [],
-    qualitySeal: false,
-    lat: -23.443, lng: -58.4438
+    qualitySeal: false
   }
 ];
 
@@ -885,7 +766,7 @@ const PROGRAMS_DB = [
 // ============================================================
 
 // Versão do seed — incrementar sempre que PROGRAMS_DB mudar
-const SEED_VERSION = 5;
+const SEED_VERSION = 6;
 
 function getAllPrograms() {
   // Se a versão do seed mudou, descarta localStorage e recarrega com dados novos
@@ -945,50 +826,26 @@ function toggleQualitySeal(id) {
   return null;
 }
 
-// Conta programas únicos: entradas com groupId agrupam como 1 programa
-function countUniquePrograms(programs) {
-  const seen = new Set();
-  let count = 0;
-  programs.forEach(p => {
-    if (p.groupId) {
-      if (!seen.has(p.groupId)) { seen.add(p.groupId); count++; }
-    } else {
-      count++;
-    }
-  });
-  return count;
-}
-
 function getStats(programs) {
   const all = programs || getAllPrograms();
 
-  // Para gráficos de duração — usar apenas representantes únicos por groupId
-  const uniqueReps = [];
-  const seenGroups = new Set();
-  all.forEach(p => {
-    if (p.groupId) {
-      if (!seenGroups.has(p.groupId)) { seenGroups.add(p.groupId); uniqueReps.push(p); }
-    } else {
-      uniqueReps.push(p);
-    }
-  });
-
   const byDuration = {
-    mobilizacao: uniqueReps.filter(p => p.duration === DURATION.MOBILIZACAO),
-    curto:       uniqueReps.filter(p => p.duration === DURATION.CURTO),
-    medio:       uniqueReps.filter(p => p.duration === DURATION.MEDIO),
-    longo:       uniqueReps.filter(p => p.duration === DURATION.LONGO)
+    mobilizacao: all.filter(p => p.duration === DURATION.MOBILIZACAO),
+    curto:       all.filter(p => p.duration === DURATION.CURTO),
+    medio:       all.filter(p => p.duration === DURATION.MEDIO),
+    longo:       all.filter(p => p.duration === DURATION.LONGO)
   };
 
-  // Mapa/países usam todas as entradas (mostra todos os países)
+  // Conta países únicos: programas podem ter vários países no array
   const countByCountry = {};
   all.forEach(p => {
-    countByCountry[p.country] = (countByCountry[p.country] || 0) + 1;
+    (p.countries || []).forEach(c => {
+      countByCountry[c] = (countByCountry[c] || 0) + 1;
+    });
   });
 
   return {
-    total: countUniquePrograms(all),   // 33 programas únicos
-    totalRaw: all.length,              // 37 entradas no DB (para mapa)
+    total: all.length,         // 33 programas (cada um é único)
     byDuration,
     countByCountry,
     withSeal: all.filter(p => p.qualitySeal).length,

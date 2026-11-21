@@ -32,7 +32,9 @@ const TRANSLATIONS = {
     // Field labels
     name:         'Nome do Programa',
     namePh:       'Ex: GPS – Generación Proclamando Salvación',
-    country:      'País',
+    country:      'Países de Atuação',
+    countryAdd:   '+ Adicionar país',
+    countryPh:    'Selecione um país...',
     region:       'Região',
     duration:     'Duração do Programa',
     durationOpt:  ['Selecione...', 'Mobilização (1–7 dias)', 'Curto Prazo (8 dias – 1 mês)', 'Médio Prazo (1–6 meses)', 'Longo Prazo (6+ meses)'],
@@ -97,7 +99,9 @@ const TRANSLATIONS = {
     sec4: 'Responsable y Contacto',
     name:         'Nombre del Programa',
     namePh:       'Ej: GPS – Generación Proclamando Salvación',
-    country:      'País',
+    country:      'Países de Actuación',
+    countryAdd:   '+ Agregar país',
+    countryPh:    'Seleccione un país...',
     region:       'Región',
     duration:     'Duración del Programa',
     durationOpt:  ['Seleccionar...', 'Movilización (1–7 días)', 'Corto Plazo (8 días – 1 mes)', 'Mediano Plazo (1–6 meses)', 'Largo Plazo (6+ meses)'],
@@ -158,7 +162,9 @@ const TRANSLATIONS = {
     sec4: 'Contact Information',
     name:         'Program Name',
     namePh:       'E.g. GPS – Generation Proclaiming Salvation',
-    country:      'Country',
+    country:      'Countries of Operation',
+    countryAdd:   '+ Add country',
+    countryPh:    'Select a country...',
     region:       'Region',
     duration:     'Program Duration',
     durationOpt:  ['Select...', 'Mobilization (1–7 days)', 'Short-Term (8 days – 1 month)', 'Medium-Term (1–6 months)', 'Long-Term (6+ months)'],
@@ -219,7 +225,9 @@ const TRANSLATIONS = {
     sec4: 'Responsable et Contact',
     name:         'Nom du Programme',
     namePh:       'Ex: GPS – Génération Proclamant le Salut',
-    country:      'Pays',
+    country:      "Pays d'Opération",
+    countryAdd:   '+ Ajouter un pays',
+    countryPh:    'Sélectionner un pays...',
     region:       'Région',
     duration:     'Durée du Programme',
     durationOpt:  ['Sélectionner...', 'Mobilisation (1–7 jours)', 'Court Terme (8 jours – 1 mois)', 'Moyen Terme (1–6 mois)', 'Long Terme (6+ mois)'],
@@ -280,7 +288,9 @@ const TRANSLATIONS = {
     sec4: 'Kontaktinformationen',
     name:         'Programmname',
     namePh:       'Bsp: GPS – Generation Proclaiming Salvation',
-    country:      'Land',
+    country:      'Tätigkeitsländer',
+    countryAdd:   '+ Land hinzufügen',
+    countryPh:    'Land auswählen...',
     region:       'Region',
     duration:     'Programmdauer',
     durationOpt:  ['Auswählen...', 'Mobilisierung (1–7 Tage)', 'Kurzfristig (8 Tage – 1 Monat)', 'Mittelfristig (1–6 Monate)', 'Langfristig (6+ Monate)'],
@@ -341,7 +351,9 @@ const TRANSLATIONS = {
     sec4: 'ข้อมูลติดต่อ',
     name:         'ชื่อโปรแกรม',
     namePh:       'เช่น GPS – รุ่นประกาศข่าวความรอด',
-    country:      'ประเทศ',
+    country:      'ประเทศที่ดำเนินการ',
+    countryAdd:   '+ เพิ่มประเทศ',
+    countryPh:    'เลือกประเทศ...',
     region:       'ภูมิภาค',
     duration:     'ระยะเวลาโปรแกรม',
     durationOpt:  ['เลือก...', 'การระดมพล (1–7 วัน)', 'ระยะสั้น (8 วัน – 1 เดือน)', 'ระยะกลาง (1–6 เดือน)', 'ระยะยาว (6+ เดือน)'],
@@ -402,7 +414,9 @@ const TRANSLATIONS = {
     sec4: '連絡先情報',
     name:         'プログラム名',
     namePh:       '例: GPS – 救いを宣言する世代',
-    country:      '国',
+    country:      '活動国',
+    countryAdd:   '+ 国を追加',
+    countryPh:    '国を選択...',
     region:       '地域',
     duration:     'プログラム期間',
     durationOpt:  ['選択...', '動員（1〜7日）', '短期（8日〜1ヶ月）', '中期（1〜6ヶ月）', '長期（6ヶ月以上）'],
@@ -569,6 +583,7 @@ function renderFormContent() {
 }
 
 function renderStep1(t) {
+  const selectedCountries = formData.countries || [];
   return `
     <div class="form-section-title">${t.sec1}</div>
     <div class="form-group">
@@ -576,14 +591,29 @@ function renderStep1(t) {
       <input type="text" id="f-name" class="form-input" placeholder="${t.namePh}" data-key="name">
       <span class="form-error" id="err-name" style="color:#e53e3e;font-size:.775rem;display:none"></span>
     </div>
-    <div class="form-grid-2">
-      <div class="form-group">
-        <label class="form-label">${t.country} <span class="required">*</span></label>
-        <select id="f-country" class="form-input form-select" data-key="country">
-          <option value="">—</option>
-          ${COUNTRIES_LIST.map(c => `<option value="${c}">${c}</option>`).join('')}
-        </select>
+    <div class="form-group">
+      <label class="form-label">${t.country} <span class="required">*</span></label>
+      <div id="countries-widget" style="display:flex;flex-direction:column;gap:8px">
+        <div id="countries-tags" style="display:flex;flex-wrap:wrap;gap:6px;min-height:36px">
+          ${selectedCountries.map(c => renderCountryTag(c)).join('')}
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <select id="f-country-add" class="form-input form-select" style="flex:1">
+            <option value="">${t.countryPh}</option>
+            ${COUNTRIES_LIST.filter(c => !selectedCountries.includes(c))
+              .map(c => `<option value="${c}">${c}</option>`).join('')}
+          </select>
+          <button type="button" onclick="addCountryTag()" style="
+            padding:9px 16px;border:none;border-radius:8px;
+            background:#1A2745;color:#fff;font-size:.85rem;font-weight:700;
+            cursor:pointer;font-family:inherit;white-space:nowrap;flex-shrink:0">
+            ${t.countryAdd}
+          </button>
+        </div>
+        <span class="form-error" id="err-country" style="color:#e53e3e;font-size:.775rem;display:none"></span>
       </div>
+    </div>
+    <div class="form-grid-2">
       <div class="form-group">
         <label class="form-label">${t.region} <span class="required">*</span></label>
         <select id="f-region" class="form-input form-select" data-key="region">
@@ -591,23 +621,66 @@ function renderStep1(t) {
           ${REGIONS_LIST.map(r => `<option value="${r}">${r}</option>`).join('')}
         </select>
       </div>
-    </div>
-    <div class="form-grid-2">
       <div class="form-group">
         <label class="form-label">${t.duration} <span class="required">*</span></label>
         <select id="f-duration" class="form-input form-select" data-key="duration">
           ${t.durationOpt.map((opt, i) => `<option value="${i === 0 ? '' : ['','mobilizacao','curto','medio','longo'][i]}">${opt}</option>`).join('')}
         </select>
       </div>
-      <div class="form-group">
-        <label class="form-label">${t.yearCreated}</label>
-        <input type="number" id="f-year" class="form-input" placeholder="${t.yearPh}" min="1900" max="2026" data-key="yearCreated">
-      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">${t.yearCreated}</label>
+      <input type="number" id="f-year" class="form-input" placeholder="${t.yearPh}" min="1900" max="2026" data-key="yearCreated">
     </div>
     <div style="display:flex;gap:16px;justify-content:flex-end;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)">
       <button class="btn btn-primary" onclick="goStep(2)">${t.btnNext}</button>
     </div>
   `;
+}
+
+function renderCountryTag(c) {
+  return `<span style="
+    display:inline-flex;align-items:center;gap:5px;
+    background:#1A2745;color:#fff;border-radius:20px;
+    padding:4px 10px 4px 12px;font-size:.8rem;font-weight:600">
+    ${c}
+    <button type="button" onclick="removeCountryTag('${c.replace(/'/g,"\\'")}')"
+      style="background:rgba(255,255,255,.2);border:none;color:#fff;border-radius:50%;
+      width:16px;height:16px;cursor:pointer;font-size:.7rem;line-height:1;
+      display:flex;align-items:center;justify-content:center;padding:0;flex-shrink:0">✕</button>
+  </span>`;
+}
+
+function addCountryTag() {
+  const sel = document.getElementById('f-country-add');
+  const c = sel?.value;
+  if (!c) return;
+  if (!formData.countries) formData.countries = [];
+  if (!formData.countries.includes(c)) {
+    formData.countries.push(c);
+  }
+  renderCountriesWidget();
+}
+
+function removeCountryTag(c) {
+  if (!formData.countries) return;
+  formData.countries = formData.countries.filter(x => x !== c);
+  renderCountriesWidget();
+}
+
+function renderCountriesWidget() {
+  const t = getLang();
+  const selected = formData.countries || [];
+  const tagsEl = document.getElementById('countries-tags');
+  const selEl  = document.getElementById('f-country-add');
+  if (tagsEl) tagsEl.innerHTML = selected.map(c => renderCountryTag(c)).join('');
+  if (selEl) {
+    const cur = selEl.value;
+    selEl.innerHTML = `<option value="">${t.countryPh}</option>` +
+      COUNTRIES_LIST.filter(c => !selected.includes(c))
+        .map(c => `<option value="${c}">${c}</option>`).join('');
+    selEl.value = selected.includes(cur) ? '' : cur;
+  }
 }
 
 function renderStep2(t) {
@@ -767,6 +840,12 @@ function validateCurrentStep() {
     } else {
       hideError('err-name');
     }
+    if (!formData.countries || formData.countries.length === 0) {
+      showError('err-country', t.valRequired);
+      valid = false;
+    } else {
+      hideError('err-country');
+    }
   }
 
   if (currentStep === 4) {
@@ -802,6 +881,7 @@ function submitForm() {
 
   const program = {
     ...formData,
+    countries: formData.countries && formData.countries.length > 0 ? formData.countries : [],
     duration: formData.duration || 'curto',
     annualParticipants: parseInt(formData.annualParticipants) || 0,
     monthlyCost: parseFloat(formData.monthlyCost) || null,
@@ -810,6 +890,8 @@ function submitForm() {
     strategicFocuses: formData.strategicFocuses || [],
     platformFocuses:  formData.platformFocuses  || [],
   };
+  // Remove legacy single-country field if present
+  delete program.country;
 
   // Save to localStorage
   if (typeof addProgram === 'function') {

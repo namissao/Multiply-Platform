@@ -33,7 +33,7 @@ function saveFormQuestions(questions) {
 function getDefaultQuestions() {
   return [
     { id: 'q1', step: 1, label: 'Nome do Programa', type: 'text', placeholder: 'Ex: GPS – Generación Proclamando Salvación', required: true, key: 'name' },
-    { id: 'q2', step: 1, label: 'País', type: 'select', options: ['Bolivia','Brasil / Brazil','Canada','Chile','Colombia','Costa Rica','El Salvador','Estados Unidos / USA','Filipinas / Philippines','Guatemala','Honduras','Japón / Japan','México / Mexico','Nicaragua','Panamá / Panama','Paraguay','Tailandia / Thailand','Other / Otro'], required: true, key: 'country' },
+    { id: 'q2', step: 1, label: 'Países de Atuação', type: 'countries', options: [], required: true, key: 'countries' },
     { id: 'q3', step: 1, label: 'Região', type: 'select', options: ['América do Norte / North America','América Central / Central America','América do Sul / South America','Europa / Europe','África / Africa','Oriente Médio / Middle East','Ásia / Asia','Oceania'], required: true, key: 'region' },
     { id: 'q4', step: 1, label: 'Duração do Programa', type: 'select', options: ['Curto Prazo (até 1 mês)','Médio Prazo (1–6 meses)','Longo Prazo (6+ meses)'], required: true, key: 'duration' },
     { id: 'q5', step: 1, label: 'Ano de Criação', type: 'number', placeholder: 'Ex: 2015', required: false, key: 'yearCreated' },
