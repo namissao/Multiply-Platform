@@ -66,10 +66,11 @@ const COUNTRY_COORDS = {
 const PROGRAMS_DB = [
 
   // ── MOBILIZAÇÃO (1–7 dias) ─────────────────────────────
-  // Programa #1 — SOAR (4 variações)
+  // Programa #1 — SOAR (4 variações — contam como 1 programa)
 
   {
     id: 1,
+    groupId: 'SOAR',
     name: 'SOAR EUA',
     country: 'USA',
     region: 'América do Norte',
@@ -90,6 +91,7 @@ const PROGRAMS_DB = [
   },
   {
     id: 2,
+    groupId: 'SOAR',
     name: 'SOAR Winnipeg',
     country: 'Canada',
     region: 'América do Norte',
@@ -110,6 +112,7 @@ const PROGRAMS_DB = [
   },
   {
     id: 3,
+    groupId: 'SOAR',
     name: 'SOAR Manitoba',
     country: 'Canada',
     region: 'América do Norte',
@@ -130,6 +133,7 @@ const PROGRAMS_DB = [
   },
   {
     id: 4,
+    groupId: 'SOAR',
     name: 'SOAR Saskatoon',
     country: 'Canada',
     region: 'América do Norte',
@@ -171,9 +175,10 @@ const PROGRAMS_DB = [
     lat: 56.1304, lng: -106.3468
   },
 
-  // Programa #3 — ACTION (3 variações)
+  // Programa #3 — ACTION (2 variações — contam como 1 programa)
   {
     id: 6,
+    groupId: 'ACTION',
     name: 'ACTION',
     country: 'Canada',
     region: 'América do Norte',
@@ -194,6 +199,7 @@ const PROGRAMS_DB = [
   },
   {
     id: 7,
+    groupId: 'ACTION',
     name: 'ACTION',
     country: 'Panama',
     region: 'América Central',
@@ -763,7 +769,51 @@ const PROGRAMS_DB = [
     lat: 8.538, lng: -80.7821
   },
 
-  // Programa #29 — EVERY CHURCH CAN Chile
+  // Programa #29 — TRECK (Canada)
+  {
+    id: 37,
+    name: 'TRECK',
+    country: 'Canada',
+    region: 'América do Norte',
+    duration: DURATION.MOBILIZACAO,
+    durationDetail: null,
+    yearCreated: null,
+    ageRange: null,
+    annualParticipants: null,
+    monthlyCost: null,
+    objectives: null,
+    responsiblePerson: null,
+    website: '',
+    instagram: '',
+    strategicFocuses: [],
+    platformFocuses: [],
+    qualitySeal: false,
+    lat: 56.1304, lng: -106.3468
+  },
+
+  // Programa #30 — LTM - Mountain View Church (USA)
+  {
+    id: 38,
+    name: 'LTM - Mountain View Church',
+    country: 'USA',
+    region: 'América do Norte',
+    duration: DURATION.MOBILIZACAO,
+    durationDetail: null,
+    yearCreated: null,
+    ageRange: null,
+    annualParticipants: null,
+    monthlyCost: null,
+    objectives: null,
+    responsiblePerson: null,
+    website: '',
+    instagram: '',
+    strategicFocuses: [],
+    platformFocuses: [],
+    qualitySeal: false,
+    lat: 37.0902, lng: -95.7129
+  },
+
+  // Programa #31 — EVERY CHURCH CAN Chile
   {
     id: 39,
     name: 'EVERY CHURCH CAN',
@@ -835,7 +885,7 @@ const PROGRAMS_DB = [
 // ============================================================
 
 // Versão do seed — incrementar sempre que PROGRAMS_DB mudar
-const SEED_VERSION = 4;
+const SEED_VERSION = 5;
 
 function getAllPrograms() {
   // Se a versão do seed mudou, descarta localStorage e recarrega com dados novos
@@ -895,20 +945,50 @@ function toggleQualitySeal(id) {
   return null;
 }
 
+// Conta programas únicos: entradas com groupId agrupam como 1 programa
+function countUniquePrograms(programs) {
+  const seen = new Set();
+  let count = 0;
+  programs.forEach(p => {
+    if (p.groupId) {
+      if (!seen.has(p.groupId)) { seen.add(p.groupId); count++; }
+    } else {
+      count++;
+    }
+  });
+  return count;
+}
+
 function getStats(programs) {
   const all = programs || getAllPrograms();
+
+  // Para gráficos de duração — usar apenas representantes únicos por groupId
+  const uniqueReps = [];
+  const seenGroups = new Set();
+  all.forEach(p => {
+    if (p.groupId) {
+      if (!seenGroups.has(p.groupId)) { seenGroups.add(p.groupId); uniqueReps.push(p); }
+    } else {
+      uniqueReps.push(p);
+    }
+  });
+
   const byDuration = {
-    mobilizacao: all.filter(p => p.duration === DURATION.MOBILIZACAO),
-    curto:       all.filter(p => p.duration === DURATION.CURTO),
-    medio:       all.filter(p => p.duration === DURATION.MEDIO),
-    longo:       all.filter(p => p.duration === DURATION.LONGO)
+    mobilizacao: uniqueReps.filter(p => p.duration === DURATION.MOBILIZACAO),
+    curto:       uniqueReps.filter(p => p.duration === DURATION.CURTO),
+    medio:       uniqueReps.filter(p => p.duration === DURATION.MEDIO),
+    longo:       uniqueReps.filter(p => p.duration === DURATION.LONGO)
   };
+
+  // Mapa/países usam todas as entradas (mostra todos os países)
   const countByCountry = {};
   all.forEach(p => {
     countByCountry[p.country] = (countByCountry[p.country] || 0) + 1;
   });
+
   return {
-    total: all.length,
+    total: countUniquePrograms(all),   // 33 programas únicos
+    totalRaw: all.length,              // 37 entradas no DB (para mapa)
     byDuration,
     countByCountry,
     withSeal: all.filter(p => p.qualitySeal).length,

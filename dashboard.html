@@ -295,7 +295,7 @@
 // Força reset imediato ANTES de data.js carregar — se versão antiga, limpa localStorage
 (function(){
   const sv = parseInt(localStorage.getItem('multiply_seed_version') || '0', 10);
-  if (sv < 4) {
+  if (sv < 5) {
     localStorage.removeItem('multiply_programs');
     localStorage.removeItem('multiply_seed_version');
   }
@@ -303,10 +303,10 @@
 </script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-<script src="js/data.js?v=4"></script>
-<script src="js/export.js?v=4"></script>
-<script src="js/form-editor.js?v=4"></script>
-<script src="js/dashboard.js?v=4"></script>
+<script src="js/data.js?v=5"></script>
+<script src="js/export.js?v=5"></script>
+<script src="js/form-editor.js?v=5"></script>
+<script src="js/dashboard.js?v=5"></script>
 
 </body>
 </html>
