@@ -212,26 +212,6 @@ const PROGRAMS_DB = [
     qualitySeal: false,
     lat: 8.538, lng: -80.7821
   },
-  {
-    id: 8,
-    name: 'ACTION',
-    country: 'USA',
-    region: 'América do Norte',
-    duration: DURATION.LONGO,
-    durationDetail: '8 meses',
-    yearCreated: null,
-    ageRange: '18 a 24',
-    annualParticipants: null,
-    monthlyCost: null,
-    objectives: 'Jovens cristãos de igrejas locais',
-    responsiblePerson: null,
-    website: '',
-    instagram: '',
-    strategicFocuses: [],
-    platformFocuses: [],
-    qualitySeal: false,
-    lat: 37.0902, lng: -95.7129
-  },
 
   // Programa #4 — ANTIOCH SCHOOL
   {
@@ -607,73 +587,7 @@ const PROGRAMS_DB = [
     lat: -14.235, lng: -51.9253
   },
 
-  // Programa #21 — ÁGUIAS
-  {
-    id: 26,
-    name: 'ÁGUIAS',
-    country: 'Brazil',
-    region: 'América do Sul',
-    duration: DURATION.LONGO,
-    durationDetail: '18 meses',
-    yearCreated: 2024,
-    ageRange: '16+',
-    annualParticipants: 63,
-    monthlyCost: 799,
-    objectives: 'Membros e líderes de igrejas locais',
-    responsiblePerson: 'Claiton Sousa',
-    website: '',
-    instagram: '',
-    strategicFocuses: [],
-    platformFocuses: [],
-    qualitySeal: false,
-    lat: -14.235, lng: -51.9253
-  },
-
-  // Programa #22 — COMEÇAR DE NOVO
-  {
-    id: 27,
-    name: 'COMEÇAR DE NOVO',
-    country: 'Brazil',
-    region: 'América do Sul',
-    duration: DURATION.MEDIO,
-    durationDetail: '16 semanas',
-    yearCreated: 2022,
-    ageRange: '12+',
-    annualParticipants: 25,
-    monthlyCost: 0,
-    objectives: 'Novos cristãos na fé',
-    responsiblePerson: 'André Warkentin',
-    website: '',
-    instagram: '',
-    strategicFocuses: [],
-    platformFocuses: [],
-    qualitySeal: false,
-    lat: -14.235, lng: -51.9253
-  },
-
-  // Programa #23 — CRESCER
-  {
-    id: 28,
-    name: 'CRESCER',
-    country: 'Brazil',
-    region: 'América do Sul',
-    duration: DURATION.MEDIO,
-    durationDetail: '10 semanas',
-    yearCreated: 2019,
-    ageRange: '18+',
-    annualParticipants: 60,
-    monthlyCost: 499,
-    objectives: 'Líderes que desejam desenvolver suas habilidades',
-    responsiblePerson: 'Elise Esau',
-    website: '',
-    instagram: '',
-    strategicFocuses: [],
-    platformFocuses: [],
-    qualitySeal: false,
-    lat: -14.235, lng: -51.9253
-  },
-
-  // Programa #24 — DMI COLOMBIA
+  // Programa #21 — DMI COLOMBIA
   {
     id: 29,
     name: 'DMI COLOMBIA',
@@ -849,51 +763,7 @@ const PROGRAMS_DB = [
     lat: 8.538, lng: -80.7821
   },
 
-  // Programa #32 — TRECK
-  {
-    id: 37,
-    name: 'TRECK',
-    country: 'Canada',
-    region: 'América do Norte',
-    duration: DURATION.MOBILIZACAO,
-    durationDetail: null,
-    yearCreated: null,
-    ageRange: null,
-    annualParticipants: null,
-    monthlyCost: null,
-    objectives: null,
-    responsiblePerson: null,
-    website: '',
-    instagram: '',
-    strategicFocuses: [],
-    platformFocuses: [],
-    qualitySeal: false,
-    lat: 56.1304, lng: -106.3468
-  },
-
-  // Programa #33 — LTM - Mountain View Church
-  {
-    id: 38,
-    name: 'LTM - Mountain View Church',
-    country: 'USA',
-    region: 'América do Norte',
-    duration: DURATION.MOBILIZACAO,
-    durationDetail: null,
-    yearCreated: null,
-    ageRange: null,
-    annualParticipants: null,
-    monthlyCost: null,
-    objectives: null,
-    responsiblePerson: null,
-    website: '',
-    instagram: '',
-    strategicFocuses: [],
-    platformFocuses: [],
-    qualitySeal: false,
-    lat: 37.0902, lng: -95.7129
-  },
-
-  // Programa #34 — EVERY CHURCH CAN Chile
+  // Programa #29 — EVERY CHURCH CAN Chile
   {
     id: 39,
     name: 'EVERY CHURCH CAN',
@@ -965,7 +835,7 @@ const PROGRAMS_DB = [
 // ============================================================
 
 // Versão do seed — incrementar sempre que PROGRAMS_DB mudar
-const SEED_VERSION = 3;
+const SEED_VERSION = 4;
 
 function getAllPrograms() {
   // Se a versão do seed mudou, descarta localStorage e recarrega com dados novos

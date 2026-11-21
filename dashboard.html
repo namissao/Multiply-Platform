@@ -295,7 +295,7 @@
 // Força reset imediato ANTES de data.js carregar — se versão antiga, limpa localStorage
 (function(){
   const sv = parseInt(localStorage.getItem('multiply_seed_version') || '0', 10);
-  if (sv < 3) {
+  if (sv < 4) {
     localStorage.removeItem('multiply_programs');
     localStorage.removeItem('multiply_seed_version');
   }
